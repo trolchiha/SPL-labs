@@ -1,5 +1,7 @@
-import sys
-from vars import home_path 
-sys.path.append(home_path + '/UI')
-sys.path.append(home_path + '/shared')
+from menu import menu
 
+def __main__():
+    menu()
+
+if __name__ == "__main__":
+    __main__()

@@ -6,10 +6,14 @@ class History:
         with open(self.file_name, 'a') as file:
             file.write(event + '\n')
 
-    def get_history(self):
+    def print_history(self):
         with open(self.file_name, 'r') as file:
-            return file.readlines()
+            file_contents = file.read()
+            print("\nHistory:")
+            print(file_contents)
+
 
     def clear_history(self):
         with open(self.file_name, 'w') as file:
             file.truncate()
+        print("\nHistory cleared!")
