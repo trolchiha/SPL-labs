@@ -12,7 +12,6 @@ class History:
             print("\nHistory:")
             print(file_contents)
 
-
     def clear_history(self):
         with open(self.file_name, 'w') as file:
             file.truncate()

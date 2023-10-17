@@ -15,6 +15,4 @@ def menu():
     main_menu.add_item(Item('0', 'Exit', exit_calculator))
     crate_history_file()
     
-    while True:
-        main_menu.print_menu()
-        main_menu.select_menu_option()
+    main_menu.run()

@@ -13,11 +13,10 @@ def make_calculation():
     parameter1, parameter2 = get_parameters_from_console()
     operator = get_operator_from_console()
     calculation_result = make_calculations(parameter1, parameter2, operator)
-    formated_result = format_result(parameter1, parameter2, operator, calculation_result, 2)
+    formated_result = format_result(parameter1, parameter2, operator, calculation_result)
     print_calculation_result(formated_result)
 
-def format_result(parameter1, parameter2, operator, calculation_result, decimal_places):
-    print(f"Decimal places: {decimal_places}")
+def format_result(parameter1, parameter2, operator, calculation_result):
     if operator == "//":
         formatted_calculation_result1 = f"{calculation_result[0]:.{get_decimal_places()}f}"
         formatted_calculation_result2 = f"{calculation_result[1]:.{get_decimal_places()}f}"
