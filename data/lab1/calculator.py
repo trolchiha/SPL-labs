@@ -33,6 +33,10 @@ def print_calculation_result(result):
     if choice == "y" or choice == "Y":
         history.add_event(result)
 
+def change_decimal_places():
+    decimal_places = int(input("Enter the number of decimal places: "))
+    write_decimal_places_to_file(decimal_places)
+
 def write_decimal_places_to_file(decimal_places=2):
     if history_path:
         with open(history_path, 'r') as file:
@@ -44,10 +48,6 @@ def write_decimal_places_to_file(decimal_places=2):
     else:
         with open(history_path, 'r') as file:
             history.add_event(f'Decimal places: {decimal_places}\n')
-
-def change_decimal_places():
-    decimal_places = int(input("Enter the number of decimal places: "))
-    write_decimal_places_to_file(decimal_places)
 
 def get_decimal_places():
     with open(history_path, 'r') as file:

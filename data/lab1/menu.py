@@ -18,4 +18,3 @@ def menu():
     while True:
         main_menu.print_menu()
         main_menu.select_menu_option()
-
