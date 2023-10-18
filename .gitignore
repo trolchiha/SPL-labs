@@ -2,8 +2,6 @@ __pycache__/
 
 .vscode/
 
-vars
+vars.py
 
-history.txt
-
-lab3
+*.txt
