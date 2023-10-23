@@ -25,7 +25,7 @@ class FigletGenerator:
         main_menu.add_item(Item('3', 'Preview', self.view_art ))
         main_menu.add_item(Item('4', 'Save art', self.save_art))
         main_menu.add_item(Item('5', 'View saved art', self.view_saved_art))
-        main_menu.add_item(Item('0', 'Exit', self.exit_program))
+        main_menu.add_item(Item('0', 'Exit'))
         
         main_menu.run()
 
@@ -37,7 +37,7 @@ class FigletGenerator:
         if self.settings.symbol is not None:
             self.modify_symbols(self.settings.symbol)
 
-        print("\nArt is generated!\n")
+        print("\nArt is generated!")
         
 
     def modify_symbols(self, symbol):
@@ -64,7 +64,3 @@ class FigletGenerator:
     def view_saved_art(self):
         saved_file = FileHandler(art_path)
         saved_file.read_from_file()
-
-    def exit_program(self):
-        print("Exiting...")
-        sys.exit(0)

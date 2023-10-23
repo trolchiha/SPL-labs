@@ -17,7 +17,7 @@ class FigletSettings():
         self.font = font
 
     def set_width(self, width):
-        self.size = width
+        self.width = width
 
     def set_symbol(self, symbol):
         self.symbol = symbol
@@ -58,6 +58,7 @@ class FigletSettings():
 
     def change_width(self):
         new_width = get_width_from_console()
+        print(new_width)
         self.set_width(new_width)
         print("\nWidth was changed to", self.width)
 

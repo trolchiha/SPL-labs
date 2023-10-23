@@ -1,10 +1,11 @@
-from vars import figlet_fonts, figlet_colors
+from vars import figlet_font_size, figlet_colors
 import pyfiglet
 import termcolor
 
 available_fonts = pyfiglet.FigletFont.getFonts()
 
 def get_font_from_console():
+    print("Font sizes: ", figlet_font_size)
     font = input("Enter font name: ")
     if check_font(font):
         return font

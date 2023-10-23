@@ -7,7 +7,7 @@ class Menu:
         self.items = []
         self.option = None
         self.exit_option = '0'
-        self.color = None
+        self.color = 'white'
 
     def add_item(self, item):
         self.items.append(item)
