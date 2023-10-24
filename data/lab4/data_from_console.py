@@ -8,11 +8,16 @@ def get_console_width():
     return columns
 
 def get_size_from_console():
-    width = int(input("Enter width: "))
+    width = int(input("Enter width (min 5): "))
     if width > get_console_width():
-        print("Width is too big")
+        print("Width is too big (min 5)")
         return get_size_from_console()
+    
     height = int(input("Enter height: "))
+
+    if width < 5 or height < 5:
+        print("Width and height should be at least 5")
+        return get_size_from_console()
     return width, height
 
 def get_symbol_from_console():

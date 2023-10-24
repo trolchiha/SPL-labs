@@ -27,6 +27,9 @@ class ArtSize:
         
         self._chars = resized_chars
         return resized_chars
+    
+    def get_chars(self):
+        return self._chars
 
     def _change_char_size(self, matrix):
         matrix = self._change_height(matrix)
