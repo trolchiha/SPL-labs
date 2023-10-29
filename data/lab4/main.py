@@ -1,4 +1,4 @@
-from art_generator import ArtGenerator
+from art.art_generator import ArtGenerator
 
 def __main__():
     art = ArtGenerator()

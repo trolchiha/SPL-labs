@@ -4,8 +4,8 @@ sys.path.append(home_path)
 
 from UI.menu import Menu
 from UI.menu_item import Item
-from art_size import ArtSize
-from data_from_console import *
+from data.lab4.art.art_size import ArtSize
+from data.lab4.art.data_from_console import *
 
 class ArtSettings:
     def __init__(self, symbol="#", width=5, height=5, justify="left", color="white"):
@@ -36,7 +36,6 @@ class ArtSettings:
     
     def menu(self):
         settings_menu = Menu("\nSettings Menu")
-        settings_menu.set_color('grey')
         settings_menu.add_item(Item('1', 'Change Symbol', self.change_symbol))
         settings_menu.add_item(Item('2', 'Change Size', self.change_size))
         settings_menu.add_item(Item('3', 'Change Justify', self.change_justify))

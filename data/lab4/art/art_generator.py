@@ -6,11 +6,11 @@ sys.path.append(home_path)
 
 from UI.menu import Menu
 from UI.menu_item import Item
-from art_settings import ArtSettings
+from data.lab4.art.art_settings import ArtSettings
 from shared.file_handler import FileHandler
-from data_from_console import get_text_from_console, get_console_width
+from data.lab4.art.data_from_console import get_text_from_console, get_console_width
 
-from font import font_dict
+from data.lab4.art.font import font_dict
 
 class ArtGenerator:
     def __init__(self):
@@ -20,7 +20,6 @@ class ArtGenerator:
 
     def menu(self):
         art_menu = Menu("\nArt Menu")
-        art_menu.set_color('grey')
         art_menu.add_item(Item('1', 'Set Art Text', self.set_text))
         art_menu.add_item(Item('2', 'Change Settings', self.change_settings))
         art_menu.add_item(Item('3', 'View Art', self.view_art))

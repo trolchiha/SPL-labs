@@ -18,7 +18,7 @@ class Menu:
             print(colored(item, self.color))
 
     def set_menu_option(self):
-        self.option = input("Enter your choice: ")
+        self.option = input(colored("Enter your choice: ", "grey"))
         
     def run_function(self, option):
         for item in self.items:
