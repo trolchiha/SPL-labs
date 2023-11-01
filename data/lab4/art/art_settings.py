@@ -18,7 +18,7 @@ class ArtSettings:
         return f"Symbol: {self.symbol} \n{self.size} \nJustify: {self.justify} \nColor: {self.color}"
 
     def change_size(self):
-        width, height = get_size_from_console()
+        width, height = get_width_and_height_from_console()
         self.size.set_width(width)
         self.size.set_height(height)
 

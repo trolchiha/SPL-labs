@@ -13,13 +13,13 @@ def get_text_from_console():
     return text
 
 
-def get_size_from_console():
+def get_width_and_height_from_console():
     try:
         width = int(input("Enter width (min 5): "))
         height = int(input("Enter heigh (min 5): "))
     except ValueError:
         print("Not a Digit!\n")
-        return get_size_from_console()
+        return get_width_and_height_from_console()
 
     width, height = check_width_and_height(width, height)
     return width, height
@@ -27,10 +27,10 @@ def get_size_from_console():
 def check_width_and_height(width, height):
     if width > get_console_width():
             print("Width is too big (min 5)!\n")
-            return get_size_from_console()
+            return get_width_and_height_from_console()
     elif width < 5 or height < 5:
             print("Width and height should be at least 5!\n")
-            return get_size_from_console()
+            return get_width_and_height_from_console()
     else:
         return width, height
 
@@ -72,3 +72,23 @@ def check_justify(justify):
     else:
         print("No such justify!\n")
         return get_justify_from_console()
+    
+def get_size_from_console():
+    try:
+        size = int(input("Enter size (min 5): "))
+    except ValueError:
+        print("Not a Digit!\n")
+        return get_size_from_console()
+
+    size = check_size(size)
+    return size
+
+def check_size(size):
+    if size > get_console_width():
+            print("Size is too big (min 5)!\n")
+            return get_size_from_console()
+    elif size < 5:
+            print("Size should be at least 5!\n")
+            return get_size_from_console()
+    else:
+        return size
