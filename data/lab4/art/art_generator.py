@@ -1,16 +1,13 @@
-import sys
-
 from termcolor import colored
-from vars import home_path, art_path
-sys.path.append(home_path)
 
 from UI.menu import Menu
 from UI.menu_item import Item
 from data.lab4.art.art_settings import ArtSettings
 from shared.file_handler import FileHandler
 from data.lab4.art.data_from_console import get_text_from_console, get_console_width
-
 from data.lab4.art.font import font_dict
+
+art_path = "data/lab4/art.txt"
 
 class ArtGenerator:
     def __init__(self):

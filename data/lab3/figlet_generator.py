@@ -1,15 +1,13 @@
-import sys
-from figlet_settings import FigletSettings
-from vars import home_path, art_path
-sys.path.append(home_path)
-
 from pyfiglet import Figlet
 from termcolor import colored
 
 from UI.menu import Menu
 from UI.menu_item import Item
 from shared.file_handler import FileHandler
-from data_from_console import get_text_from_console
+from data.lab3.data_from_console import get_text_from_console
+from data.lab3.figlet_settings import FigletSettings
+
+art_path = "data/lab3/art.txt"
 
 class FigletGenerator:
     def __init__(self, text=None):

@@ -1,4 +1,4 @@
-from figlet_generator import FigletGenerator
+from data.lab3.figlet_generator import FigletGenerator
 
 def __main__():
     art = FigletGenerator()

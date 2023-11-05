@@ -1,10 +1,6 @@
-import sys
-from vars import home_path 
-sys.path.append(home_path)
-
 from UI.menu import Menu
 from UI.menu_item import Item
-from data_from_console import get_font_from_console, get_width_from_console, get_symbol_from_console, get_color_from_console
+from data.lab3.data_from_console import get_font_from_console, get_width_from_console, get_symbol_from_console, get_color_from_console
 
 class FigletSettings():
     def __init__(self):

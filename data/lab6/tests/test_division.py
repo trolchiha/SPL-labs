@@ -1,9 +1,5 @@
 import unittest
 
-import sys
-from vars import home_path
-sys.path.append(home_path)
-
 from data.lab1.math_operations import count_quotient
 
 class DivisionTestCase(unittest.TestCase):

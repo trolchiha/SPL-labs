@@ -1,4 +1,4 @@
-from menu import menu
+from data.lab1.menu import menu
 
 def __main__():
     menu()

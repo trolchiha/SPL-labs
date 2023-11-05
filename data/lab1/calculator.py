@@ -1,12 +1,10 @@
 import re
-import sys
-from vars import home_path, history_path
-sys.path.append(home_path)
+
 from shared.history import History
+from data.lab1.math_operations import *
+from data.lab1.data_from_console import get_parameters_from_console, get_operator_from_console
 
-from math_operations import *
-from data_from_console import get_parameters_from_console, get_operator_from_console
-
+history_path = "data/lab1/history.txt"
 history = History(history_path)
 
 def make_calculation():

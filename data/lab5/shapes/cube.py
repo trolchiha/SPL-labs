@@ -1,10 +1,5 @@
-import sys
-
-from vars import art_path
-sys.path.append(art_path)
-
-from art_settings import ArtSettings
-from print_art import PrintArt
+from data.lab5.art.art_settings import ArtSettings
+from data.lab5.art.print_art import PrintArt
 from .shape import Shape
 
 

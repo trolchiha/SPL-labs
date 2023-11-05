@@ -1,14 +1,12 @@
-import sys
-
-from vars import home_path, art_2D_path, art_3D_path
-sys.path.append(home_path)
-
 from UI.menu import Menu
 from UI.menu_item import Item
 from shared.file_handler import FileHandler
 
-from shapes.cube import Cube
-from shapes.pyramid import Pyramid
+from data.lab5.shapes.cube import Cube
+from data.lab5.shapes.pyramid import Pyramid
+
+art_2D_path = "data/lab5/art_2D.txt"
+art_3D_path = "data/lab5/art_3D.txt"
 
 class ArtMenu:
     def __init__(self):
