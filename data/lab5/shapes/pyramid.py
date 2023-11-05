@@ -7,11 +7,11 @@ sys.path.append(art_path)
 from art_settings import ArtSettings
 from print_art import PrintArt
 
-main = "+"
-back = "*"
+main = "|"
+back = "-"
 
 class Pyramid(Shape, PrintArt):
-    def __init__(self, size=5, justify="left", color="white"):
+    def __init__(self, size=6, justify="left", color="white"):
         self.settings = ArtSettings(size, justify, color)
         self.art_2D = self.generate_2D()
         self.art_3D = self.generate_3D()

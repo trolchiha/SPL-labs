@@ -7,12 +7,12 @@ class PrintArt:
 
     def print_art_2D(self):
         art = self.justify_art(self.shape.art_2D)
-        print(colored("\nArt 2D"))
+        print(colored("\nArt 2D\n"))
         print(colored(art, self.shape.settings.get_color()))
 
     def print_art_3D(self):
         art = self.justify_art(self.shape.art_3D)
-        print(colored("\nArt 3D"))
+        print(colored("\nArt 3D\n"))
         print(colored(art, self.shape.settings.get_color()))
 
     def justify_art(self, art):
@@ -24,7 +24,7 @@ class PrintArt:
 
     def get_padding(self, art):
         console_width = get_console_width()
-        art_len = len(art)
+        art_len = len(art)//self.shape.settings.get_size()
         justify = self.shape.settings.get_justify()
         
         if justify == "center":

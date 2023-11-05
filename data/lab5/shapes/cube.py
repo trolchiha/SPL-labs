@@ -9,7 +9,7 @@ from .shape import Shape
 
 
 class Cube(Shape, PrintArt):
-    def __init__(self, size=5, justify="left", color="white"):
+    def __init__(self, size=6, justify="left", color="white"):
         self.settings = ArtSettings(size, justify, color)
         self.art_2D = self.generate_2D()
         self.art_3D = self.generate_3D()

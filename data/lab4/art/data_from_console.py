@@ -85,10 +85,10 @@ def get_size_from_console():
 
 def check_size(size):
     if size > get_console_width():
-            print("Size is too big (min 5)!\n")
+            print("Size is too big (min 6)!\n")
             return get_size_from_console()
-    elif size < 5:
-            print("Size should be at least 5!\n")
+    elif size < 6:
+            print("Size should be at least 6!\n")
             return get_size_from_console()
     else:
         return size
