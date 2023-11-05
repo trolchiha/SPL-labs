@@ -7,7 +7,7 @@ from UI.menu_item import Item
 from calculator import *
 
 def menu():
-    main_menu = Menu("Menu")
+    main_menu = Menu("\nMenu")
     main_menu.add_item(Item('1', 'Make Calculations', make_calculation))
     main_menu.add_item(Item('2', 'Change Decimal Places (default 2)', change_decimal_places))
     main_menu.add_item(Item('3', 'View History', view_history))

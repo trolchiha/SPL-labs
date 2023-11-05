@@ -5,7 +5,7 @@ sys.path.append(home_path)
 from shared.history import History
 
 from math_operations import *
-from data_from_console import *
+from data_from_console import get_parameters_from_console, get_operator_from_console
 
 history = History(history_path)
 
@@ -13,6 +13,9 @@ def make_calculation():
     parameter1, parameter2 = get_parameters_from_console()
     operator = get_operator_from_console()
     calculation_result = make_calculations(parameter1, parameter2, operator)
+    if calculation_result is None:
+        print("Calculations were not made due to the error!")
+        return
     formated_result = format_result(parameter1, parameter2, operator, calculation_result)
     print_calculation_result(formated_result)
 
