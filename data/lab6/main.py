@@ -1,9 +1,15 @@
-import tests.addition_test as add
-import tests.substraction_test as sub
-import tests.multiplication_test as mul
-import tests.division_test as div
-
 import unittest
 
-# unittest.main(sub)
-unittest.main(div)
+def run_tests():
+    loader = unittest.TestLoader()
+    suite = loader.discover(start_dir="tests", pattern="test_*.py")
+    runner = unittest.TextTestRunner(verbosity=2)
+    result = runner.run(suite)
+
+    if result.wasSuccessful():
+        print("All tests passed.")
+    else:
+        print("Some tests failed.")
+
+if __name__ == '__main__':
+    run_tests()
