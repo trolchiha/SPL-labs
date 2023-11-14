@@ -4,6 +4,7 @@ __pycache__/
 
 vars.py
 
-*.txt
 
 bullshit.py
+
+.env

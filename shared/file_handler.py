@@ -12,6 +12,14 @@ class FileHandler:
         except Exception as e:
             print(f"Error writing to {self.file_name}: {e}")
 
+    def append_to_file(self, data):
+        try:
+            with open(self.file_name, "a") as file:
+                file.write(data)
+        except Exception as e:
+            print(f"Error writing to {self.file_name}: {e}")
+
+
     def read_from_file(self):
         try:
             with open(self.file_name, "r") as file:

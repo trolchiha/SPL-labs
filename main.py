@@ -3,6 +3,7 @@ import os
 
 from UI.menu import Menu
 from UI.menu_item import Item
+import data.lab7.main as lab7
 
 def main():
     labs = [f for f in os.listdir("data") if os.path.isdir(os.path.join("data", f))]
@@ -18,4 +19,6 @@ def main():
     labs_menu.run()
 
 if __name__ == "__main__":
-    main()
+    # main()
+    lab7.__main__()
+
