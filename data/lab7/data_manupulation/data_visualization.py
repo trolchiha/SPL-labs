@@ -1,12 +1,11 @@
-from texttable import Texttable
 from tabulate import tabulate
 from colorama import Fore, Style
-
+from data.lab7.data_manupulation.data_from_console import get_color
 
 class DataVisualization:
     def __init__(self, data):
         self.data = data
-
+        self.color = Fore.WHITE
 
     def visualize_as_table(self):
         if isinstance(self.data, dict):
@@ -15,14 +14,14 @@ class DataVisualization:
         flat_list = [self.flatten_json(item) for item in self.data]
         headers = flat_list[0].keys()
 
-        colored_headers = [f"{Fore.GREEN}{header}{Style.RESET_ALL}" for header in headers]
+        colored_headers = [f"{self.color}{header}{Style.RESET_ALL}" for header in headers]
         column_width = 100 // len(colored_headers)
         
         table = []
         for item in flat_list:
             table.append(item.values())
 
-        print(tabulate(table, colored_headers, tablefmt="grid", maxcolwidths=column_width))
+        print(tabulate(table, colored_headers, tablefmt="gridx", maxcolwidths=column_width))
 
 
     def visualize_as_list(self):
@@ -35,12 +34,14 @@ class DataVisualization:
             line = f"{i+1}. "
             for j, key in enumerate(item):
                 if j == 0:
-                    print(f"{line}{Fore.GREEN}{key}{Style.RESET_ALL} - {item.get(key)}")
+                    print(f"{line}{self.color}{key}{Style.RESET_ALL} - {item.get(key)}")
                 else:
                     spaces = len(line)*" "
-                    print(f"{spaces}{Fore.GREEN}{key}{Style.RESET_ALL} - {item.get(key)}")
+                    print(f"{spaces}{self.color}{key}{Style.RESET_ALL} - {item.get(key)}")
             print()
 
+    def settings(self):
+        self.color = get_color()
 
     def flatten_json(self, data, parent_key='', sep='.'):
         flat_data = {}
