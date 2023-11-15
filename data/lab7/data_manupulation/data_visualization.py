@@ -1,26 +1,46 @@
 from texttable import Texttable
+from tabulate import tabulate
+from colorama import Fore, Style
+
 
 class DataVisualization:
     def __init__(self, data):
         self.data = data
 
-    def visualize_table(self, header, json):
-        table = Texttable()
-        table.header(header)
-            
-        for idx, key in enumerate(json):
-            table.add_row([idx+1, key, json.get(key)])
 
-        print(table.draw())
+    def visualize_as_table(self):
+        if isinstance(self.data, dict):
+            self.data = [self.data]
+        
+        flat_list = [self.flatten_json(item) for item in self.data]
+        headers = flat_list[0].keys()
 
-    def visualize_list(self):
+        colored_headers = [f"{Fore.GREEN}{header}{Style.RESET_ALL}" for header in headers]
+        column_width = 100 // len(colored_headers)
+        
+        table = []
+        for item in flat_list:
+            table.append(item.values())
+
+        print(tabulate(table, colored_headers, tablefmt="grid", maxcolwidths=column_width))
+
+
+    def visualize_as_list(self):
         if isinstance(self.data, dict):
             self.data = [self.data]
             
         flat_list = [self.flatten_json(item) for item in self.data]
-        print(flat_list)
-        for idx, key in enumerate(flat_list):
-            print(f"{idx+1}. - {key} - {flat_list.get(key)}")
+        
+        for i, item in enumerate(flat_list):
+            line = f"{i+1}. "
+            for j, key in enumerate(item):
+                if j == 0:
+                    print(f"{line}{Fore.GREEN}{key}{Style.RESET_ALL} - {item.get(key)}")
+                else:
+                    spaces = len(line)*" "
+                    print(f"{spaces}{Fore.GREEN}{key}{Style.RESET_ALL} - {item.get(key)}")
+            print()
+
 
     def flatten_json(self, data, parent_key='', sep='.'):
         flat_data = {}

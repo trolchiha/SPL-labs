@@ -107,11 +107,12 @@ class APIMenu:
         print_menu.run()
 
     def print_table(self):
-        pass
+        data_visualization = DataVisualization(self.data)
+        data_visualization.visualize_as_table()
 
     def print_list(self):
         data_visualization = DataVisualization(self.data)
-        data_visualization.visualize_list()
+        data_visualization.visualize_as_list()
 
     def print_settings(self):
         pass

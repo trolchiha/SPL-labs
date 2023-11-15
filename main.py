@@ -18,7 +18,19 @@ def main():
     labs_menu.add_item(Item(0, "Exit"))
     labs_menu.run()
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
     # main()
-    lab7.__main__()
+lab7.__main__()
 
+# import colorama
+# from colorama import Fore, Back, Style
+
+# #Initialize colorama
+# colorama.init(autoreset=True)
+
+# #Print text using background and font colors
+# print(Fore.RED + "Welcome to LinuxHint")
+
+# word = Fore.YELLOW + "Welcome to LinuxHint"
+
+# print(word)
