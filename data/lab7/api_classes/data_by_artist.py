@@ -89,3 +89,4 @@ class DataByArtist(Artist):
             track.set_values(json_track)
             data.append(track.get_track_formatted_json())
         return data
+    

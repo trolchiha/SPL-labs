@@ -43,6 +43,9 @@ class DataVisualization:
     def settings(self):
         self.color = get_color()
 
+    def view_settings(self):
+        print("Color:", self.color)
+
     def flatten_json(self, data, parent_key='', sep='.'):
         flat_data = {}
         for key, value in data.items():
