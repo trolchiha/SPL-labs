@@ -1,10 +1,10 @@
 import importlib
 import os
 
-from UI.menu import Menu
-from UI.menu_item import Item
+# from UI.menu import Menu
+# from UI.menu_item import Item
 import data.lab7.main as lab7
-# import data.lab7.tests.main as lab7
+# import data.lab7.data_manupulation.data_from_console as lab7
 
 def main():
     labs = [f for f in os.listdir("data") if os.path.isdir(os.path.join("data", f))]
@@ -22,7 +22,8 @@ def main():
 # if __name__ == "__main__":
     # main()
 lab7.__main__()
-
+# color = lab7.get_color()
+# print(color)
 
 
 

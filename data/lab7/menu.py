@@ -16,6 +16,7 @@ class APIMenu:
     def __init__(self):
         self.data = None
         self.history = History("data/lab7/saved_data/history.txt")
+        self.data_visualization = DataVisualization()
         
     def menu(self):
         menu = Menu("\nSpotify API Menu")
@@ -139,12 +140,12 @@ class APIMenu:
         print_menu.run()
 
     def print_table(self):
-        data_visualization = DataVisualization(self.data)
-        data_visualization.visualize_as_table()
+        self.data_visualization.set_data(self.data)
+        self.data_visualization.visualize_as_table()
 
     def print_list(self):
-        data_visualization = DataVisualization(self.data)
-        data_visualization.visualize_as_list()
+        self.data_visualization.set_data(self.data)
+        self.data_visualization.visualize_as_list()
 
     def settings_menu(self):
         settings_menu = Menu("\nSettings Menu")
@@ -155,10 +156,10 @@ class APIMenu:
         settings_menu.run()
 
     def print_settings(self):
-        data_visualization = DataVisualization(self.data)
-        data_visualization.view_settings()
+        self.data_visualization.set_data(self.data)
+        self.data_visualization.view_settings()
 
     def change_color(self):
-        data_visualization = DataVisualization(self.data)
-        data_visualization.settings()
+        self.data_visualization.set_data(self.data)
+        self.data_visualization.settings()
         

@@ -88,8 +88,6 @@ class DataByArtist(Artist):
         data = []
         
         for json_track in json_tracks:
-            print(json_track)
-            print("-------")
             track = Track()
             track.set_values(json_track)
             data.append(track.get_track_formatted_json())

@@ -6,14 +6,14 @@ def get_name(obj):
     return obj
 
 def get_color():
-    foreground_colors = [
-        color for color in dir(Fore) if isinstance(getattr(Fore, color), str)
-    ]
-    color = input(f"Enter color: ")
-    if color not in foreground_colors:
-        print("No such color. Color was set to white")
-        color = Fore.WHITE
-    return Fore.color
+    list_of_colors = ['RED', 'GREEN', 'YELLOW', 'BLUE', 'MAGENTA', 'CYAN', 'WHITE']
+    print("Available colors: red, green, yellow, blue, magenta, cyan, white")
+    input_color = input(f"Enter color: ")
+    color_name = input_color.upper() 
+    if color_name not in list_of_colors:
+        print("Invalid color")
+        return "WHITE"
+    return color_name
 
 def get_user_input_recommendations():
     user_input = str(input("Enter parameters for recomendations\ne.g. genre=pop, rock; track=blinding lights; artist=the weeknd, metallica\n"))
