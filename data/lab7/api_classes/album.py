@@ -14,6 +14,12 @@ class Album:
         self.spotify_link = None
         self.init_album(name)
 
+    def __init__(self):
+        self.id = None
+        self.album_name = None
+        self.artist = None
+        self.release_date = None
+        self.spotify_link = None
 
     def __str__(self):
         return str(self.get_album_formatted_json())

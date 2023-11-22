@@ -6,11 +6,10 @@ from data.lab7.auth.auth import get_auth_header, get_token
 BASE_URL = 'https://api.spotify.com/v1/'
 
 class Artist:
-    def __init__(self, name):
+    def __init__(self):
         self.id = None
         self.artist_name = None
         self.spotify_link = None
-        self.init_artist(name)
 
     def __str__(self):
         return str(self.get_artist_formatted_json())

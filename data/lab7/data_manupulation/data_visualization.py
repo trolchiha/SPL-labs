@@ -15,13 +15,13 @@ class DataVisualization:
         headers = flat_list[0].keys()
 
         colored_headers = [f"{self.color}{header}{Style.RESET_ALL}" for header in headers]
-        column_width = 100 // len(colored_headers)
+        max_col_width = 100 // len(headers)
         
         table = []
         for item in flat_list:
             table.append(item.values())
 
-        print(tabulate(table, colored_headers, tablefmt="gridx", maxcolwidths=column_width))
+        print(tabulate(table, colored_headers, tablefmt="fancy_grid", maxcolwidths=max_col_width))
 
 
     def visualize_as_list(self):

@@ -9,9 +9,12 @@ from data.lab7.api_classes.track import Track
 BASE_URL = 'https://api.spotify.com/v1/'
 
 class DataByArtist(Artist):
-    def __init__(self, artist_name):
+    def __init__(self):
         self.data = []
-        super().__init__(artist_name)
+        super().__init__()
+
+    def init_artist(self, name):
+        return super().init_artist(name)
 
     def get_albums_by_artist_json_from_api(self):
         try:
@@ -85,6 +88,8 @@ class DataByArtist(Artist):
         data = []
         
         for json_track in json_tracks:
+            print(json_track)
+            print("-------")
             track = Track()
             track.set_values(json_track)
             data.append(track.get_track_formatted_json())
