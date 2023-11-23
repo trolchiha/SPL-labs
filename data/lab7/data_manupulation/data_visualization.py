@@ -20,7 +20,7 @@ class DataVisualization:
         color = getattr(Fore, self.color, None)
 
         colored_headers = [f"{color}{header}{Style.RESET_ALL}" for header in headers]
-        max_col_width = 100 // len(headers)
+        max_col_width = 90 // len(headers)
         
         table = []
         for item in flat_list:

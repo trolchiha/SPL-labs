@@ -46,3 +46,11 @@ Get Artist a
 Get Artist a
 Get Artist ф1
 Get Artist ф
+Get queen Top Tracks
+Get queen Top Tracks
+Get Track blinding lights
+Get queen Top Tracks
+Get recommendations
+Get metallica Top Tracks
+Get mai.atmo Top Tracks
+Get mai,atmo Albums
