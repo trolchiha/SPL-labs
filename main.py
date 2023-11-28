@@ -3,7 +3,7 @@ import os
 
 from UI.menu import Menu
 from UI.menu_item import Item
-# import data.lab7.main as lab7
+import data.lab8.main as lab8
 # import data.lab7.data_manupulation.data_from_console as lab7
 
 def main():
@@ -20,4 +20,5 @@ def main():
     labs_menu.run()
 
 if __name__ == "__main__":
-    main()
+    lab8.__main__()
+    # main()
