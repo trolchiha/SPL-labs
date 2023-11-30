@@ -4,7 +4,6 @@ import os
 from UI.menu import Menu
 from UI.menu_item import Item
 import data.lab8.main as lab8
-# import data.lab7.data_manupulation.data_from_console as lab7
 
 def main():
     labs = [f for f in os.listdir("data") if os.path.isdir(os.path.join("data", f))]

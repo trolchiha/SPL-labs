@@ -54,3 +54,4 @@ class CSVMenu:
             
         print("Invalid input.")
         self.diagrams.visualize_line_plot_and_sector()
+        

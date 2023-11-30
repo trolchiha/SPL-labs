@@ -100,3 +100,4 @@ class Diagrams:
             fig.savefig(f'data/lab8/data/diagrams/{file_name}.png')
             print(f"Exported to {file_name}.png")
         fig.clf()    
+        
