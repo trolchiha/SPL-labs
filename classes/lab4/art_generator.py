@@ -14,16 +14,16 @@ class ArtGenerator:
         self.settings = ArtSettings()
         self.art = None
 
-    def menu(self):
-        art_menu = Menu("\nArt Menu")
-        art_menu.add_item(Item('1', 'Set Art Text', self.set_text))
-        art_menu.add_item(Item('2', 'Change Settings', self.change_settings))
-        art_menu.add_item(Item('3', 'View Art', self.view_art))
-        art_menu.add_item(Item('4', 'Save Art to File', self.save_art_to_file))
-        art_menu.add_item(Item('5', 'View Saved Art', self.view_saved_art))
-        art_menu.add_item(Item('0', 'Exit'))
+    # def menu(self):
+    #     art_menu = Menu("\nArt Menu")
+    #     art_menu.add_item(Item('1', 'Set Art Text', self.set_text))
+    #     art_menu.add_item(Item('2', 'Change Settings', self.change_settings))
+    #     art_menu.add_item(Item('3', 'View Art', self.view_art))
+    #     art_menu.add_item(Item('4', 'Save Art to File', self.save_art_to_file))
+    #     art_menu.add_item(Item('5', 'View Saved Art', self.view_saved_art))
+    #     art_menu.add_item(Item('0', 'Exit'))
 
-        art_menu.run()
+    #     art_menu.run()
 
     def set_text(self):
         self.text = get_text_from_console()

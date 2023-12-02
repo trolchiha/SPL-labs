@@ -10,16 +10,16 @@ from .settings import HISTORY_PATH, DECIMAL_PLACES
 class Calculator:
     def __init__(self):
         self.history = History(HISTORY_PATH)
-        self.terminal_menu = Menu("Menu")
         self.decimal_places = DECIMAL_PLACES
 
-    def menu(self):
-        self.terminal_menu.add_item(Item("1", "Perform calculations", self.perform_calculations))
-        self.terminal_menu.add_item(Item("2", "Change decimal places (default 2)", self.change_decimal_places))
-        self.terminal_menu.add_item(Item("3", "View history", self.view_history))
-        self.terminal_menu.add_item(Item("4", "Clear history", self.clear_history))
-        self.terminal_menu.add_item(Item("0", "Exit", self.exit))
-        self.terminal_menu.run()
+    # def menu(self):
+        # self.terminal_menu = Menu("Menu")
+    #     self.terminal_menu.add_item(Item("1", "Perform calculations", self.perform_calculations))
+    #     self.terminal_menu.add_item(Item("2", "Change decimal places (default 2)", self.change_decimal_places))
+    #     self.terminal_menu.add_item(Item("3", "View history", self.view_history))
+    #     self.terminal_menu.add_item(Item("4", "Clear history", self.clear_history))
+    #     self.terminal_menu.add_item(Item("0", "Exit", self.exit))
+    #     self.terminal_menu.run()
 
     def perform_calculations(self):
         parameter1, parameter2 = get_parameters_from_console()

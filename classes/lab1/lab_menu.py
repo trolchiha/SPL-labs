@@ -2,7 +2,7 @@ from UI.menu import Menu
 from UI.menu_item import Item
 from .calculator import *
 
-def menu():
+def lab_menu():
     main_menu = Menu("\nMenu")
     main_menu.add_item(Item('1', 'Make Calculations', make_calculation))
     main_menu.add_item(Item('2', 'Change Decimal Places (default 2)', change_decimal_places))

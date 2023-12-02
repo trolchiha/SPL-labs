@@ -10,12 +10,12 @@ class ArtMenu:
     def __init__(self):
         self.shape = None
 
-    def main_menu(self):
-        art_menu = Menu("\nArt Menu")
-        art_menu.add_item(Item('1', 'Choose shape', self.set_shape))
-        art_menu.add_item(Item('0', 'Exit'))
+    # def main_menu(self):
+    #     art_menu = Menu("\nArt Menu")
+    #     art_menu.add_item(Item('1', 'Choose shape', self.set_shape))
+    #     art_menu.add_item(Item('0', 'Exit'))
 
-        art_menu.run()
+    #     art_menu.run()
 
     def set_shape(self):
         shape = input("Choose shape [ cube, pyramid ]: ")
