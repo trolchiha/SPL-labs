@@ -2,12 +2,11 @@ from termcolor import colored
 
 from UI.menu import Menu
 from UI.menu_item import Item
-from data.lab4.art.art_settings import ArtSettings
 from shared.file_handler import FileHandler
-from data.lab4.art.data_from_console import get_text_from_console, get_console_width
-from data.lab4.art.font import font_dict
-
-art_path = "data/lab4/art.txt"
+from .art_settings import ArtSettings
+from .data_from_console import get_text_from_console, get_console_width
+from .font import font_dict
+from .settings import ART_PATH
 
 class ArtGenerator:
     def __init__(self):
@@ -99,9 +98,9 @@ class ArtGenerator:
         if self.art is None:
             print("No art to save")
             return
-        saved_file = FileHandler(art_path)
+        saved_file = FileHandler(ART_PATH)
         saved_file.write_to_file(self.art)
 
     def view_saved_art(self):
-        saved_file = FileHandler(art_path)
+        saved_file = FileHandler(ART_PATH)
         saved_file.read_from_file()

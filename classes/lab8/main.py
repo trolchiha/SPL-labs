@@ -1,4 +1,4 @@
-from data.lab8.menu import CSVMenu
+from .menu import CSVMenu
 
 def __main__():
     menu = CSVMenu()

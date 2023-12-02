@@ -1,12 +1,11 @@
 import json
 from requests import get, exceptions
 
-from data.lab7.auth.auth import get_auth_header, get_token
-from data.lab7.api_classes.artist import Artist
-from data.lab7.api_classes.album import Album
-from data.lab7.api_classes.track import Track
-
-BASE_URL = 'https://api.spotify.com/v1/'
+from classes.lab7.auth.auth import get_auth_header, get_token
+from classes.lab7.api_classes.artist import Artist
+from classes.lab7.api_classes.album import Album
+from classes.lab7.api_classes.track import Track
+from classes.lab7.settings import BASE_URL
 
 class DataByArtist(Artist):
     def __init__(self):

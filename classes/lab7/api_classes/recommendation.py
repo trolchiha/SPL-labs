@@ -1,9 +1,9 @@
 import json
 from requests import get, exceptions
 
-from data.lab7.auth.auth import get_auth_header, get_token
-from data.lab7.api_classes.artist import Artist
-from data.lab7.api_classes.track import Track
+from classes.lab7.auth.auth import get_auth_header, get_token
+from classes.lab7.api_classes.artist import Artist
+from classes.lab7.api_classes.track import Track
 
 class Recommendation():
     def __init__(self, limit=5, seed_artists=None, seed_genres=None, seed_tracks=None):

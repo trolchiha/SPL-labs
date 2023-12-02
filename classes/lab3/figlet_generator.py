@@ -4,10 +4,10 @@ from termcolor import colored
 from UI.menu import Menu
 from UI.menu_item import Item
 from shared.file_handler import FileHandler
-from classes.lab3.data_from_console import get_text_from_console
-from classes.lab3.figlet_settings import FigletSettings
+from .data_from_console import get_text_from_console
+from .figlet_settings import FigletSettings
 
-art_path = "data/lab3/art.txt"
+from .settings import ART_PATH
 
 class FigletGenerator:
     def __init__(self, text=None):
@@ -56,9 +56,9 @@ class FigletGenerator:
         if self.figlet is None:
             print("No art to save")
             return
-        saved_file = FileHandler(art_path)
+        saved_file = FileHandler(ART_PATH)
         saved_file.write_to_file(self.figlet)
 
     def view_saved_art(self):
-        saved_file = FileHandler(art_path)
+        saved_file = FileHandler(ART_PATH)
         saved_file.read_from_file()

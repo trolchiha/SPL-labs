@@ -5,13 +5,13 @@ from UI.menu_item import Item
 from classes.lab1.math_operations import make_calculations
 from classes.lab1.data_from_console import get_parameters_from_console, get_operator_from_console
 
-history_path = "data/lab2/history.txt"
+from .settings import HISTORY_PATH, DECIMAL_PLACES
 
 class Calculator:
     def __init__(self):
-        self.history = History(history_path)
+        self.history = History(HISTORY_PATH)
         self.terminal_menu = Menu("Menu")
-        self.decimal_places = 2
+        self.decimal_places = DECIMAL_PLACES
 
     def menu(self):
         self.terminal_menu.add_item(Item("1", "Perform calculations", self.perform_calculations))

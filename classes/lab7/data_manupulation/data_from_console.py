@@ -1,22 +1,19 @@
 import re
-from colorama import Fore
+from shared.input_handler import InputHandler
 
 def get_name(obj):
-    obj = input(f"Enter {obj} name: ")
+    obj = InputHandler().get_str_input(f"Enter {obj} name")
     return obj
 
 def get_color():
     list_of_colors = ['RED', 'GREEN', 'YELLOW', 'BLUE', 'MAGENTA', 'CYAN', 'WHITE']
     print("Available colors: red, green, yellow, blue, magenta, cyan, white")
-    input_color = input(f"Enter color: ")
+    input_color = InputHandler().get_one_of_list_input_ignore_case("Enter color", list_of_colors)
     color_name = input_color.upper() 
-    if color_name not in list_of_colors:
-        print("Invalid color")
-        return "WHITE"
     return color_name
 
 def get_user_input_recommendations():
-    user_input = str(input("Enter parameters for recomendations\ne.g. genre=pop, rock; track=blinding lights; artist=the weeknd, metallica\n"))
+    user_input = InputHandler().get_str_input("Enter parameters for recomendations\ne.g. genre=pop, rock; track=blinding lights; artist=the weeknd, metallica\n")
     pattern = re.compile(r'\b(genre|artist|track)\s*=\s*([^;]+)(?:;|$)')
 
     user_recommendations = {'genre': [], 'artist': [], 'track': []}

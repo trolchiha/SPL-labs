@@ -1,6 +1,6 @@
 import unittest
 
-from data.lab1.math_operations import count_product
+from classes.lab1.math_operations import count_product
 
 class MultiplicationTestCase(unittest.TestCase):
     def test_multiplication_positive_numbers(self):

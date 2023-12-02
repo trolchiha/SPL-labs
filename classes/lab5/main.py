@@ -1,4 +1,4 @@
-from data.lab5.art.art_menu import ArtMenu
+from .art.art_menu import ArtMenu
 
 def __main__():
     menu = ArtMenu()

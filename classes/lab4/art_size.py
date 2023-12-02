@@ -1,7 +1,8 @@
 import numpy as np
+from .settings import DEFAULT_WIDTH, DEFAULT_HEIGHT
 
 class ArtSize:
-    def __init__(self, width=5, height=5):
+    def __init__(self, width=DEFAULT_WIDTH, height=DEFAULT_HEIGHT):
         self._width = width
         self._height = height
         self._chars = None

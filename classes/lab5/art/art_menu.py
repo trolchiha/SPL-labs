@@ -2,11 +2,9 @@ from UI.menu import Menu
 from UI.menu_item import Item
 from shared.file_handler import FileHandler
 
-from data.lab5.shapes.cube import Cube
-from data.lab5.shapes.pyramid import Pyramid
-
-art_2D_path = "data/lab5/art_2D.txt"
-art_3D_path = "data/lab5/art_3D.txt"
+from classes.lab5.shapes.cube import Cube
+from classes.lab5.shapes.pyramid import Pyramid
+from classes.lab5.settings import ART_2D_PATH, ART_3D_PATH
 
 class ArtMenu:
     def __init__(self):
@@ -66,17 +64,17 @@ class ArtMenu:
         save_menu.run()
 
     def save_to_file_2D(self):
-        saved_file = FileHandler(art_2D_path)
+        saved_file = FileHandler(ART_2D_PATH)
         saved_file.write_to_file(self.shape.art_2D)
 
     def save_to_file_3D(self):
-        saved_file = FileHandler(art_3D_path)
+        saved_file = FileHandler(ART_3D_PATH)
         saved_file.write_to_file(self.shape.art_3D)
 
     def view_saved_2D(self):
-        saved_file = FileHandler(art_2D_path)
+        saved_file = FileHandler(ART_2D_PATH)
         saved_file.read_from_file()
 
     def view_saved_3D(self):
-        saved_file = FileHandler(art_3D_path)
+        saved_file = FileHandler(ART_3D_PATH)
         saved_file.read_from_file()

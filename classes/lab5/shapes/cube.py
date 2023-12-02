@@ -1,10 +1,10 @@
-from data.lab5.art.art_settings import ArtSettings
-from data.lab5.art.print_art import PrintArt
+from classes.lab5.art.art_settings import ArtSettings
+from classes.lab5.art.print_art import PrintArt
 from .shape import Shape
-
+from classes.lab5.settings import DEFAULT_SIZE, DEFAULT_JUSTIFY, DEFAULT_COLOR  
 
 class Cube(Shape, PrintArt):
-    def __init__(self, size=6, justify="left", color="white"):
+    def __init__(self, size=DEFAULT_SIZE, justify=DEFAULT_JUSTIFY, color=DEFAULT_COLOR):
         self.settings = ArtSettings(size, justify, color)
         self.art_2D = self.generate_2D()
         self.art_3D = self.generate_3D()

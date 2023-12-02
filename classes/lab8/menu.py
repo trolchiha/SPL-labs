@@ -1,10 +1,11 @@
 from UI.menu import Menu
 from UI.menu_item import Item
-from data.lab8.diagrams import Diagrams
+from .diagrams import Diagrams
+from .settings import CSV_FILE_PATH
 
 class CSVMenu:
     def __init__(self) :
-        self.csv_file_path = 'data/lab8/data/data.csv'
+        self.csv_file_path = CSV_FILE_PATH
         self.diagrams = Diagrams(self.csv_file_path)
 
     def main_menu(self):

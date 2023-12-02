@@ -1,6 +1,6 @@
 import unittest
 
-from data.lab1.math_operations import count_quotient, count_square_root, count_remainder
+from classes.lab1.math_operations import count_quotient, count_square_root, count_remainder
 
 
 class ExceptionsTestCase(unittest.TestCase):

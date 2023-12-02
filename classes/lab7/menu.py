@@ -2,20 +2,22 @@ from UI.menu import Menu
 from UI.menu_item import Item
 from shared.history import History
 
-from data.lab7.api_classes.artist import Artist
-from data.lab7.api_classes.album import Album
-from data.lab7.api_classes.track import Track
-from data.lab7.api_classes.data_by_artist import DataByArtist
-from data.lab7.data_manupulation.data_saver import DataSaver
-from data.lab7.data_manupulation.data_visualization import DataVisualization
-from data.lab7.data_manupulation.data_from_console import get_name, get_user_input_recommendations
-from data.lab7.api_classes.recommendation import Recommendation
-import data.lab7.tests.main as tests
+from .api_classes.artist import Artist
+from .api_classes.album import Album
+from .api_classes.track import Track
+from .api_classes.data_by_artist import DataByArtist
+from .data_manupulation.data_saver import DataSaver
+from .data_manupulation.data_visualization import DataVisualization
+from .data_manupulation.data_from_console import get_name, get_user_input_recommendations
+from .api_classes.recommendation import Recommendation
+import classes.lab7.tests.main as tests
+
+from .settings import HISTORY_FILE_PATH
 
 class APIMenu:
     def __init__(self):
         self.data = None
-        self.history = History("data/lab7/saved_data/history.txt")
+        self.history = History(HISTORY_FILE_PATH)
         self.data_visualization = DataVisualization()
         
     def menu(self):

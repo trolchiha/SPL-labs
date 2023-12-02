@@ -1,7 +1,6 @@
 from UI.menu import Menu
 from UI.menu_item import Item
-from data.lab4.art.data_from_console import get_size_from_console, get_color_from_console, get_justify_from_console
-
+from classes.lab4.data_from_console import get_size_from_console, get_color_from_console, get_justify_from_console
 
 class ArtSettings:
     def __init__(self, size=5, justify="left", color="white"):

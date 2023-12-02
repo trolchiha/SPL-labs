@@ -1,6 +1,6 @@
 import unittest
 
-from data.lab1.math_operations import count_difference
+from classes.lab1.math_operations import count_difference
 
 class SubtractionTestCase(unittest.TestCase):
     def test_subtraction_positive_numbers(self):

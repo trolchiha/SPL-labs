@@ -35,6 +35,20 @@ class InputHandler:
         self.input_data = input_data
         return input_data
     
+    def get_one_of_list_input_ignore_case(self, message, list):
+        input_data = input(f"{message}: ")
+        while not self.check_input_in_list_ignore_case(input_data, list):
+            input_data = input(f"{message}: ")
+        self.input_data = input_data
+        return input_data
+    
+    def check_input_in_list_ignore_case(self, input_data, list):
+        input_data = input_data.lower()
+        for item in list:
+            if input_data == item.lower():
+                return True
+        return False
+    
     def check_input_in_list(self, input_data, list):   
         if input_data in list:
             return True

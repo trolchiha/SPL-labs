@@ -1,10 +1,11 @@
 from UI.menu import Menu
 from UI.menu_item import Item
-from data.lab4.art.art_size import ArtSize
-from data.lab4.art.data_from_console import *
+from .art_size import ArtSize
+from .data_from_console import *
+from .settings import DEFAULT_SYMBOL, DEFAULT_WIDTH, DEFAULT_HEIGHT, DEFAULT_JUSTIFY, DEFAULT_COLOR
 
 class ArtSettings:
-    def __init__(self, symbol="#", width=5, height=5, justify="left", color="white"):
+    def __init__(self, symbol=DEFAULT_SYMBOL, width=DEFAULT_WIDTH, height=DEFAULT_HEIGHT, justify=DEFAULT_JUSTIFY, color=DEFAULT_COLOR):
         self.symbol = symbol
         self.size = ArtSize(width, height)
         self.justify = justify

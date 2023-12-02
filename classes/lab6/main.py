@@ -1,10 +1,9 @@
 import unittest
-
-test_dir = "data/lab6/tests"
+from .settings import TEST_DIR
 
 def __main__():
     loader = unittest.TestLoader()
-    suite = loader.discover(start_dir=test_dir, pattern="test_*.py")
+    suite = loader.discover(start_dir=TEST_DIR, pattern="test_*.py")
     runner = unittest.TextTestRunner(verbosity=2)
     result = runner.run(suite)
 

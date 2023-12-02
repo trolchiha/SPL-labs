@@ -1,6 +1,6 @@
 import unittest
 
-from data.lab1.math_operations import count_sum
+from classes.lab1.math_operations import count_sum
 
 
 class AdditionTestCase(unittest.TestCase):

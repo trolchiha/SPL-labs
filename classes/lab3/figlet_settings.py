@@ -1,13 +1,14 @@
 from UI.menu import Menu
 from UI.menu_item import Item
-from classes.lab3.data_from_console import get_font_from_console, get_width_from_console, get_symbol_from_console, get_color_from_console
+from .data_from_console import get_font_from_console, get_width_from_console, get_symbol_from_console, get_color_from_console
+from .settings import DEFAULT_FONT, DEFAULT_WIDTH, DEFAULT_COLOR
 
 class FigletSettings():
     def __init__(self):
-        self.font = 'standard'
-        self.width = 80
+        self.font = DEFAULT_FONT
+        self.width = DEFAULT_WIDTH
         self.symbol = None
-        self.color = None
+        self.color = DEFAULT_COLOR
 
     def set_font(self, font):
         self.font = font
@@ -57,7 +58,6 @@ class FigletSettings():
         print(new_width)
         self.set_width(new_width)
         print("\nWidth was changed to", self.width)
-
 
     def change_symbol(self):
         new_symbol = get_symbol_from_console()

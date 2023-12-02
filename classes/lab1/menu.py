@@ -1,6 +1,6 @@
 from UI.menu import Menu
 from UI.menu_item import Item
-from classes.lab1.calculator import *
+from .calculator import *
 
 def menu():
     main_menu = Menu("\nMenu")

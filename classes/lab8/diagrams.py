@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from datetime import datetime
+from .settings import DEFAULT_YEAR, DEFAULT_MONTH, DIAGRAMS_DIR
 
 class Diagrams:
     def __init__(self, csv_file_path):
@@ -58,7 +59,7 @@ class Diagrams:
         plt.show()
         self.export_data(fig, "column_diagram")
 
-    def visualize_sector_diagram(self, year=1990):
+    def visualize_sector_diagram(self, year=DEFAULT_YEAR):
         self.df['age'] = self.get_age()
         df_after_year = self.df[self.df['birthdate'].dt.year >= year]
         percentage_after_year = df_after_year['country'].value_counts(normalize=True) * 100
@@ -69,7 +70,7 @@ class Diagrams:
         plt.show()
         self.export_data(fig, "sector_diagram")
 
-    def visualize_line_plot_and_sector(self, month=6):
+    def visualize_line_plot_and_sector(self, month=DEFAULT_MONTH):
         months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
         self.df['age'] = self.get_age()
         df_june = self.df[self.df['birthdate'].dt.month == month]
@@ -97,7 +98,7 @@ class Diagrams:
     def export_data(self, fig, file_name='diagram'):
         choice = input("Export to PNG? (y/n): ")
         if choice.capitalize() == 'Y':
-            fig.savefig(f'data/lab8/data/diagrams/{file_name}.png')
+            fig.savefig(f'{DIAGRAMS_DIR}{file_name}.png')
             print(f"Exported to {file_name}.png")
         fig.clf()    
         

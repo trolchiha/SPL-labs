@@ -1,16 +1,15 @@
-from dotenv import load_dotenv
-from requests import post, get
 import os
 import base64
 import json
 
+from dotenv import load_dotenv
+from requests import post, get
+
+from classes.lab7.settings import AUTH_URL, TOKEN_URL
 load_dotenv()
 
 CLIENT_ID = os.getenv("CLIENT_ID")
 CLIENT_SECRET = os.getenv("CLIENT_SECRET")
-
-AUTH_URL = 'https://accounts.spotify.com/authorize'
-TOKEN_URL = 'https://accounts.spotify.com/api/token'
 
 def get_token():
     auth_string = CLIENT_ID + ":" + CLIENT_SECRET

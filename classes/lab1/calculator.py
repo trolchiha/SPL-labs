@@ -1,8 +1,8 @@
 import re
 from shared.history import History
-from classes.lab1.math_operations import *
-from classes.lab1.data_from_console import get_parameters_from_console, get_operator_from_console
-from classes.lab1.settings import HISTORY_PATH, DECIMAL_PLACES
+from .math_operations import *
+from .data_from_console import get_parameters_from_console, get_operator_from_console
+from .settings import HISTORY_PATH, DECIMAL_PLACES
 
 history = History(HISTORY_PATH)
 

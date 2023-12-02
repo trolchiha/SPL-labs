@@ -3,10 +3,12 @@
     "history_path": "data/lab1/history.txt",
     "decimal_places": 2
   },
+  
   "lab2": {
     "history_path": "data/lab2/history.txt",
     "decimal_places": 2
   },
+  
   "lab3": {
     "art_path": "data/lab3/art.txt",
     "default_figlet_settings": {
@@ -16,16 +18,53 @@
     },
     "figlet_font_sizes": ["big", "standard", "small", "mini"]
   },
+  
   "lab4": {
     "art_path": "data/lab4/art.txt",
-    "default_figlet_settings": {
-      "font": "standard",
-      "width": 80,
+    "default_art_settings": {
+      "symbol": "#",
+      "width": 5,
+      "height": 5,
+      "justify": "left",
       "color": "white"
     }
   },
-  "lab5": ["aa"],
-  "lab6": [],
-  "lab7": [],
-  "lab8": []
+  
+  "lab5": {
+    "art_2D_path": "data/lab5/art_2D.txt",
+    "art_3D_path": "data/lab5/art_3D.txt",
+    "default_shape_settings": {
+      "size": 6,
+      "justify": "left",
+      "color": "white"
+    }
+  },
+  
+  "lab6": {
+    "test_dir": "classes/lab6/tests"
+  },
+  
+  "lab7": {
+    "history_file_path": "data/lab7/history.txt",
+    "json_file_path" : "data/lab7/data.json",
+    "csv_file_path": "data/lab7/data.csv",
+    "txt_file_path" : "data/lab7/data.txt",
+    "data_visualization_settings": {
+      "color": "WHITE",
+      "table": "fancy_grid"
+    },
+
+    "urls": {
+      "base_url": "https://api.spotify.com/v1/",
+      "auth_utl": "https://accounts.spotify.com/authorize",
+      "token_url": "https://accounts.spotify.com/api/token"
+    }
+  },
+
+  "lab8": {
+    "csv_file_path": "data/lab8/data/data.csv",
+    "diagrams_dir" : "data/lab8/diagrams/",
+    "default_year": 2000,
+    "default_month": 1
+  }
 }

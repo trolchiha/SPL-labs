@@ -1,11 +1,12 @@
 from tabulate import tabulate
 from colorama import Fore, Style
-from data.lab7.data_manupulation.data_from_console import get_color
+from .data_from_console import get_color
+from classes.lab7.settings import DEFAULT_COLOR, DEFAULT_TABLE_FORMAT
 
 class DataVisualization:
     def __init__(self):
         self.data = None
-        self.color = "WHITE"
+        self.color = DEFAULT_COLOR
 
     def set_data(self, data):
         self.data = data
@@ -26,7 +27,7 @@ class DataVisualization:
         for item in flat_list:
             table.append(item.values())
 
-        print(tabulate(table, colored_headers, tablefmt="fancy_grid", maxcolwidths=max_col_width))
+        print(tabulate(table, colored_headers, tablefmt=DEFAULT_TABLE_FORMAT, maxcolwidths=max_col_width))
 
 
     def visualize_as_list(self):

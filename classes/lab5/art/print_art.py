@@ -1,5 +1,5 @@
 from termcolor import colored
-from data.lab4.art.data_from_console import get_console_width
+from classes.lab4.data_from_console import get_console_width
 
 class PrintArt:
     def __init__(self, Shape):

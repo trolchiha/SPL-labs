@@ -1,6 +1,6 @@
 import unittest
 
-from data.lab1.math_operations import count_quotient
+from classes.lab1.math_operations import count_quotient
 
 class DivisionTestCase(unittest.TestCase):
     def test_division_positive_numbers(self):

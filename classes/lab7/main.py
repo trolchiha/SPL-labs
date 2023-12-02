@@ -1,4 +1,4 @@
-from data.lab7.menu import APIMenu
+from .menu import APIMenu
 
 def __main__():
     menu = APIMenu()
