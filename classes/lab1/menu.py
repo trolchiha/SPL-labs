@@ -1,6 +1,6 @@
 from UI.menu import Menu
 from UI.menu_item import Item
-from data.lab1.calculator import *
+from classes.lab1.calculator import *
 
 def menu():
     main_menu = Menu("\nMenu")
@@ -8,7 +8,7 @@ def menu():
     main_menu.add_item(Item('2', 'Change Decimal Places (default 2)', change_decimal_places))
     main_menu.add_item(Item('3', 'View History', view_history))
     main_menu.add_item(Item('4', 'Clear History', clear_history))
-    main_menu.add_item(Item('0', 'Exit', exit_calculator))
+    main_menu.add_item(Item('0', 'Exit'))
     crate_history_file()
     
     main_menu.run()

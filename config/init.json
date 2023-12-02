@@ -1,0 +1,31 @@
+{
+  "lab1": { 
+    "history_path": "data/lab1/history.txt",
+    "decimal_places": 2
+  },
+  "lab2": {
+    "history_path": "data/lab2/history.txt",
+    "decimal_places": 2
+  },
+  "lab3": {
+    "art_path": "data/lab3/art.txt",
+    "default_figlet_settings": {
+      "font": "standard",
+      "width": 80,
+      "color": "white"
+    },
+    "figlet_font_sizes": ["big", "standard", "small", "mini"]
+  },
+  "lab4": {
+    "art_path": "data/lab4/art.txt",
+    "default_figlet_settings": {
+      "font": "standard",
+      "width": 80,
+      "color": "white"
+    }
+  },
+  "lab5": ["aa"],
+  "lab6": [],
+  "lab7": [],
+  "lab8": []
+}

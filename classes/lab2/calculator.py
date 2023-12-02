@@ -2,8 +2,8 @@ from shared.history import History
 from UI.menu import Menu
 from UI.menu_item import Item
 
-from data.lab1.math_operations import make_calculations
-from data.lab1.data_from_console import get_parameters_from_console, get_operator_from_console
+from classes.lab1.math_operations import make_calculations
+from classes.lab1.data_from_console import get_parameters_from_console, get_operator_from_console
 
 history_path = "data/lab2/history.txt"
 

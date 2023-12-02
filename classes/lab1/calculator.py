@@ -1,11 +1,10 @@
 import re
-
 from shared.history import History
-from data.lab1.math_operations import *
-from data.lab1.data_from_console import get_parameters_from_console, get_operator_from_console
+from classes.lab1.math_operations import *
+from classes.lab1.data_from_console import get_parameters_from_console, get_operator_from_console
+from classes.lab1.settings import HISTORY_PATH, DECIMAL_PLACES
 
-history_path = "data/lab1/history.txt"
-history = History(history_path)
+history = History(HISTORY_PATH)
 
 def make_calculation():
     parameter1, parameter2 = get_parameters_from_console()
@@ -37,20 +36,20 @@ def change_decimal_places():
     decimal_places = int(input("Enter the number of decimal places: "))
     write_decimal_places_to_file(decimal_places)
 
-def write_decimal_places_to_file(decimal_places=2):
-    if history_path:
-        with open(history_path, 'r') as file:
+def write_decimal_places_to_file(decimal_places=DECIMAL_PLACES):
+    if HISTORY_PATH:
+        with open(HISTORY_PATH, 'r') as file:
             lines = file.readlines()
         if lines:
             lines[0] = f'Decimal places: {decimal_places}\n'
-        with open(history_path, 'w') as file:
+        with open(HISTORY_PATH, 'w') as file:
             file.writelines(lines)
     else:
-        with open(history_path, 'r') as file:
+        with open(HISTORY_PATH, 'r') as file:
             history.add_event(f'Decimal places: {decimal_places}\n')
 
 def get_decimal_places():
-    with open(history_path, 'r') as file:
+    with open(HISTORY_PATH, 'r') as file:
         file_content = file.read()
 
         pattern = r'\d+'
@@ -59,7 +58,7 @@ def get_decimal_places():
     return decimal_places[0]
 
 def crate_history_file():
-    with open(history_path, 'w') as file:
+    with open(HISTORY_PATH, 'w') as file:
         file.write("Decimal places: 2\n")
 
 def view_history():
@@ -67,7 +66,3 @@ def view_history():
 
 def clear_history():
     history.clear_history()
-
-def exit_calculator():
-    print("Exiting calculator...")
-    sys.exit()

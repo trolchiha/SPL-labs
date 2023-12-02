@@ -4,8 +4,8 @@ from termcolor import colored
 from UI.menu import Menu
 from UI.menu_item import Item
 from shared.file_handler import FileHandler
-from data.lab3.data_from_console import get_text_from_console
-from data.lab3.figlet_settings import FigletSettings
+from classes.lab3.data_from_console import get_text_from_console
+from classes.lab3.figlet_settings import FigletSettings
 
 art_path = "data/lab3/art.txt"
 
