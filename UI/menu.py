@@ -1,5 +1,8 @@
 import termcolor
 from termcolor import colored
+import logging
+
+logger = logging.getLogger(__name__)
 
 class Menu:
     def __init__(self, name):
@@ -24,10 +27,12 @@ class Menu:
         for item in self.items:
             if item.id == option:
                 item.function()
+                logger.info("The function %s has been called.", item.function.__name__)
                 break
 
     def run(self):
         while True:
+            logger.info("The menu %s has been called.", self.name.replace("\n", ""))
             self.print_menu()
             self.set_menu_option()
             if self.option == self.exit_option:
