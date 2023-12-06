@@ -6,27 +6,51 @@ from .settings import DEFAULT_SYMBOL, DEFAULT_WIDTH, DEFAULT_HEIGHT, DEFAULT_JUS
 
 class ArtSettings:
     def __init__(self, symbol=DEFAULT_SYMBOL, width=DEFAULT_WIDTH, height=DEFAULT_HEIGHT, justify=DEFAULT_JUSTIFY, color=DEFAULT_COLOR):
-        self.symbol = symbol
-        self.size = ArtSize(width, height)
-        self.justify = justify
-        self.color = color
+        self._symbol = symbol
+        self._size = ArtSize(width, height)
+        self._justify = justify
+        self._color = color
 
     def __str__(self):
-        return f"Symbol: {self.symbol} \n{self.size} \nJustify: {self.justify} \nColor: {self.color}"
+        return f"Symbol: {self._symbol} \n{self._size} \nJustify: {self._justify} \nColor: {self._color}"
+
+    def get_symbol(self):
+        return self._symbol
+    
+    def get_size(self):
+        return self._size
+    
+    def get_justify(self):
+        return self._justify
+    
+    def get_color(self):
+        return self._color
+    
+    def set_symbol(self, symbol):
+        self._symbol = symbol
+
+    def set_size(self, size):
+        self._size = size
+
+    def set_justify(self, justify):
+        self._justify = justify
+
+    def set_color(self, color):
+        self._color = color
 
     def change_size(self):
         width, height = get_width_and_height_from_console()
-        self.size.set_width(width)
-        self.size.set_height(height)
+        self._size.set_width(width)
+        self._size.set_height(height)
 
     def change_symbol(self):
-        self.symbol = get_symbol_from_console()
+        self._symbol = get_symbol_from_console()
         
     def change_justify(self):
-        self.justify = get_justify_from_console()
+        self._justify = get_justify_from_console()
 
     def change_color(self):
-        self.color = get_color_from_console()
+        self._color = get_color_from_console()
 
     def view_settings(self):
         print(self.__str__())

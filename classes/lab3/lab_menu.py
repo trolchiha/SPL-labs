@@ -4,7 +4,7 @@ from .figlet_generator import FigletGenerator
 
 def lab_menu():
     figlet_generator = FigletGenerator()
-    main_menu = Menu("\nMenu")
+    main_menu = Menu("\nMenu (Lab 3)")
     main_menu.set_color('grey')
     main_menu.add_item(Item('1', 'Generate art', figlet_generator.generate_art))
     main_menu.add_item(Item('2', 'Change settings', figlet_generator.change_settings))

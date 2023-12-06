@@ -9,20 +9,23 @@ back = "-"
 
 class Pyramid(Shape, PrintArt):
     def __init__(self, size=DEFAULT_SIZE, justify=DEFAULT_JUSTIFY, color=DEFAULT_COLOR):
-        self.settings = ArtSettings(size, justify, color)
-        self.art_2D = self.generate_2D()
-        self.art_3D = self.generate_3D()
+        self._settings = ArtSettings(size, justify, color)
+        self._art_2D = self.generate_2D()
+        self._art_3D = self.generate_3D()
         PrintArt.__init__(self, self)
 
     def set_settings(self, settings):
-        self.settings = settings
-        self.art_2D = self.generate_2D()
-        self.art_3D = self.generate_3D()
+        self._settings = settings
+        self._art_2D = self.generate_2D()
+        self._art_3D = self.generate_3D()
+
+    def get_settings(self):
+        return self._settings
 
     def generate_2D(self):
         art = ""
         counter = 1
-        size = self.settings.get_size()
+        size = self._settings.get_size()
 
         for i in range(1, size+1):
             space = " " * (size - i)
@@ -34,7 +37,7 @@ class Pyramid(Shape, PrintArt):
     def generate_3D(self):
         art = ""
         counter = 1
-        size = self.settings.get_size()
+        size = self._settings.get_size()
         stop = size - round(size/5)
         step = round(stop/(size - stop+2))
         num = step

@@ -9,7 +9,7 @@ class CSVMenu:
         self.diagrams = Diagrams(self.csv_file_path)
 
     def main_menu(self):
-        main_menu = Menu("\nMenu")
+        main_menu = Menu("\nMenu (Lab 8)")
         main_menu.set_color("red")
         main_menu.add_item(Item("1", "Extreme values", self.values_menu))
         main_menu.add_item(Item("2", "Diagrams", self.diagram_menu))

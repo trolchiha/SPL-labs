@@ -21,6 +21,18 @@ class Calculator:
     #     self.terminal_menu.add_item(Item("0", "Exit", self.exit))
     #     self.terminal_menu.run()
 
+    def get_history(self):
+        return self.history
+    
+    def get_decimal_places(self):
+        return self.decimal_places
+    
+    def set_decimal_places(self, decimal_places):
+        if decimal_places > 0:
+            self.decimal_places = decimal_places
+        else:
+            print("The number of decimal places must be greater than 0.")
+
     def perform_calculations(self):
         parameter1, parameter2 = get_parameters_from_console()
         operator = get_operator_from_console()
@@ -29,15 +41,16 @@ class Calculator:
         self.print_calculation_result(formatted_result)
     
     def change_decimal_places(self):
-        self.decimal_places = int(input("Enter the number of decimal places: "))
+        decimal_places = int(input("Enter the number of decimal places: "))
+        self.set_decimal_places(decimal_places)
         
     def format_result(self, parameter1, parameter2, operator, calculation_result):
         if operator == "//":
-            formatted_calculation_result1 = f"{calculation_result[0]:.{self.decimal_places}f}"
-            formatted_calculation_result2 = f"{calculation_result[1]:.{self.decimal_places}f}"
+            formatted_calculation_result1 = f"{calculation_result[0]:.{self.get_decimal_places()}f}"
+            formatted_calculation_result2 = f"{calculation_result[1]:.{self.get_decimal_places()}f}"
             result = f"Square root of {parameter1} = {formatted_calculation_result1}, Square root of {parameter2} = {formatted_calculation_result2}"
         else:
-            formatted_calculation_result = f"{calculation_result:.{self.decimal_places}f}"
+            formatted_calculation_result = f"{calculation_result:.{self.get_decimal_places()}f}"
             result = f"{parameter1} {operator} {parameter2} = {formatted_calculation_result}"
         return result
 
@@ -48,12 +61,9 @@ class Calculator:
             self.history.add_event(result)
 
     def view_history(self):
-        self.history.print_history()
+        self.get_history().print_history()
 
     def clear_history(self):
-        self.history.clear_history()
+        self.get_history().clear_history()
 
-    def exit(self):
-        print("Exiting...")
-        sys.exit()
             

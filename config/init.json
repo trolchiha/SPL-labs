@@ -62,7 +62,7 @@
   },
 
   "lab8": {
-    "csv_file_path": "data/lab8/data/data.csv",
+    "csv_file_path": "classes/lab8/data.csv",
     "diagrams_dir" : "data/lab8/diagrams/",
     "default_year": 2000,
     "default_month": 1

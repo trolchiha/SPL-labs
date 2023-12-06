@@ -4,7 +4,7 @@ from .art_generator import ArtGenerator
 
 def lab_menu():
     art_generator = ArtGenerator()
-    art_menu = Menu("\nArt Menu")
+    art_menu = Menu("\nArt Menu (Lab 4)")
     art_menu.add_item(Item('1', 'Set Art Text', art_generator.set_text))
     art_menu.add_item(Item('2', 'Change Settings', art_generator.change_settings))
     art_menu.add_item(Item('3', 'View Art', art_generator.view_art))

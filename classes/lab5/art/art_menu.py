@@ -8,7 +8,7 @@ from classes.lab5.settings import ART_2D_PATH, ART_3D_PATH
 
 class ArtMenu:
     def __init__(self):
-        self.shape = None
+        self.__shape = None
 
     # def main_menu(self):
     #     art_menu = Menu("\nArt Menu")
@@ -24,13 +24,15 @@ class ArtMenu:
             return
         
         if shape == 'cube':
-            self.shape = Cube()
+            self.__shape = Cube()
         
         if shape == 'pyramid':
-            self.shape = Pyramid()
+            self.__shape = Pyramid()
 
         self.sub_menu()
 
+    def get_shape(self):
+        return self.__shape
 
     def sub_menu(self):
         sub_menu = Menu("\nArt Menu")
@@ -43,38 +45,37 @@ class ArtMenu:
         sub_menu.run()
 
     def view_art_2D(self):
-        self.shape.print_art_2D()
+        self.__shape.print_art_2D()
 
     def view_art_3D(self):
-        self.shape.print_art_3D()
+        self.__shape.print_art_3D()
 
     def change_settings(self):
-        self.shape.settings.settings_menu()
-        self.shape.set_settings(self.shape.settings.get_settings_obj())
-
+        self.__shape._settings.settings_menu()
+        self.__shape.set_settings(self.__shape._settings.get_settings_obj())
 
     def save_menu(self):
-        save_menu = Menu("\Save Menu")
-        save_menu.add_item(Item('1', 'Save 2D to File', self.save_to_file_2D))
-        save_menu.add_item(Item('2', 'Save 3D to File', self.save_to_file_3D))
-        save_menu.add_item(Item('3', 'View Saved 2D', self.view_saved_2D))
-        save_menu.add_item(Item('4', 'View Saved 3D', self.view_saved_3D))
+        save_menu = Menu("\nSave Menu")
+        save_menu.add_item(Item('1', 'Save 2D to File', self._save_to_file_2D))
+        save_menu.add_item(Item('2', 'Save 3D to File', self._save_to_file_3D))
+        save_menu.add_item(Item('3', 'View Saved 2D', self._view_saved_2D))
+        save_menu.add_item(Item('4', 'View Saved 3D', self._view_saved_3D))
         save_menu.add_item(Item('0', 'Back'))
 
         save_menu.run()
 
-    def save_to_file_2D(self):
+    def _save_to_file_2D(self):
         saved_file = FileHandler(ART_2D_PATH)
         saved_file.write_to_file(self.shape.art_2D)
 
-    def save_to_file_3D(self):
+    def _save_to_file_3D(self):
         saved_file = FileHandler(ART_3D_PATH)
         saved_file.write_to_file(self.shape.art_3D)
 
-    def view_saved_2D(self):
+    def _view_saved_2D(self):
         saved_file = FileHandler(ART_2D_PATH)
         saved_file.read_from_file()
 
-    def view_saved_3D(self):
+    def _view_saved_3D(self):
         saved_file = FileHandler(ART_3D_PATH)
         saved_file.read_from_file()

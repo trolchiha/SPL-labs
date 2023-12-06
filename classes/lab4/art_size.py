@@ -19,25 +19,31 @@ class ArtSize:
     def set_chars(self, chars):   
         self._chars = chars
 
+    def get_width(self):
+        return self._width
+    
+    def get_height(self):
+        return self._height
+    
+    def get_chars(self):
+        return self._chars
+
     def get_resized_chars(self):
         resized_chars = []
         if self._chars is None:
             return "No chars to resize"
         for char in self._chars:
-            resized_chars.append(self._change_char_size(char))
+            resized_chars.append(self.__change_char_size(char))
         
         self._chars = resized_chars
         return resized_chars
-    
-    def get_chars(self):
-        return self._chars
 
-    def _change_char_size(self, matrix):
-        matrix = self._change_height(matrix)
-        matrix = self._change_width(matrix)
+    def __change_char_size(self, matrix):
+        matrix = self.__change_height(matrix)
+        matrix = self.__change_width(matrix)
         return matrix
 
-    def _change_width(self, matrix):
+    def __change_width(self, matrix):
         if self._width <= 5:
             return matrix
         
@@ -52,7 +58,7 @@ class ArtSize:
         matrix = np_matrix.tolist()
         return matrix
 
-    def _change_height(self, matrix):
+    def __change_height(self, matrix):
         if self._height <= 5:
             return matrix
         

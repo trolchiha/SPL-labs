@@ -5,29 +5,41 @@ from .settings import DEFAULT_FONT, DEFAULT_WIDTH, DEFAULT_COLOR
 
 class FigletSettings():
     def __init__(self):
-        self.font = DEFAULT_FONT
-        self.width = DEFAULT_WIDTH
-        self.symbol = None
-        self.color = DEFAULT_COLOR
+        self._font = DEFAULT_FONT
+        self._width = DEFAULT_WIDTH
+        self._symbol = None
+        self._color = DEFAULT_COLOR
 
     def set_font(self, font):
-        self.font = font
+        self._font = font
 
     def set_width(self, width):
-        self.width = width
+        self._width = width
 
     def set_symbol(self, symbol):
-        self.symbol = symbol
+        self._symbol = symbol
 
     def set_color(self, color):
-        self.color = color
+        self._color = color
+
+    def get_font(self):
+        return self.font
+    
+    def get_width(self):
+        return self.width
+    
+    def get_symbol(self):
+        return self.symbol
+    
+    def get_color(self):
+        return self.color
 
     def get_settings(self):
         settings = {
-            "font": self.font,
-            "width": self.width,
-            "symbol": self.symbol,
-            "color": self.color,
+            "font": self._font,
+            "width": self._width,
+            "symbol": self._symbol,
+            "color": self._color,
         }
         return settings
     
@@ -50,21 +62,21 @@ class FigletSettings():
 
     def change_font(self):
         new_font = get_font_from_console()
-        self.set_font(new_font)
-        print("\nFont was changed to", self.font)
+        self._font = new_font
+        print("\nFont was changed to", self._font)
 
     def change_width(self):
         new_width = get_width_from_console()
         print(new_width)
-        self.set_width(new_width)
-        print("\nWidth was changed to", self.width)
+        self._width = new_width
+        print("\nWidth was changed to", self._width)
 
     def change_symbol(self):
         new_symbol = get_symbol_from_console()
-        self.set_symbol(new_symbol)
-        print("\nSymbol was changed to", self.symbol)
+        self._symbol = new_symbol
+        print("\nSymbol was changed to", self._symbol)
 
     def change_color(self):
         new_color = get_color_from_console()
-        self.set_color(new_color)
-        print("\nColor was changed to", self.color)
+        self._color = new_color
+        print("\nColor was changed to", self._color)

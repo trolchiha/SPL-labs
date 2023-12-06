@@ -5,7 +5,7 @@ import classes.lab7.tests.main as tests
 
 def lab_menu():
     api = APIMenu()
-    menu = Menu("\nSpotify API Menu")
+    menu = Menu("\nSpotify API Menu (Lab 7)")
     menu.set_color("green")
     menu.add_item(Item("1", "Search Menu", api.search_menu))
     menu.add_item(Item("2", "Artist Menu", api.player_menu))

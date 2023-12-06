@@ -3,7 +3,12 @@ from UI.menu_item import Item
 from .calculator import *
 
 def lab_menu():
-    main_menu = Menu("\nMenu")
+    """
+    This function creates and runs a menu for Lab 1.
+    The menu allows the user to perform calculations, change decimal places,
+    view history, clear history, and exit the program.
+    """
+    main_menu = Menu("\nMenu (Lab 1)")
     main_menu.add_item(Item('1', 'Make Calculations', make_calculation))
     main_menu.add_item(Item('2', 'Change Decimal Places (default 2)', change_decimal_places))
     main_menu.add_item(Item('3', 'View History', view_history))

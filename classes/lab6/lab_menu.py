@@ -4,7 +4,7 @@ from UI.menu_item import Item
 from .settings import TEST_DIR
 
 def lab_menu():
-    menu = Menu("\nMenu")
+    menu = Menu("\nMenu (Lab 6)")
     menu.add_item(Item("1", "Run Tests", run_tests))
     menu.add_item(Item("0", "Exit"))
     menu.run()

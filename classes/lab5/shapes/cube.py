@@ -5,21 +5,21 @@ from classes.lab5.settings import DEFAULT_SIZE, DEFAULT_JUSTIFY, DEFAULT_COLOR
 
 class Cube(Shape, PrintArt):
     def __init__(self, size=DEFAULT_SIZE, justify=DEFAULT_JUSTIFY, color=DEFAULT_COLOR):
-        self.settings = ArtSettings(size, justify, color)
-        self.art_2D = self.generate_2D()
-        self.art_3D = self.generate_3D()
+        self._settings = ArtSettings(size, justify, color)
+        self._art_2D = self.generate_2D()
+        self._art_3D = self.generate_3D()
         PrintArt.__init__(self, self)
 
 
     def set_settings(self, settings):
-        self.settings = settings
-        self.art_2D = self.generate_2D()
-        self.art_3D = self.generate_3D()
+        self._settings = settings
+        self._art_2D = self.generate_2D()
+        self._art_3D = self.generate_3D()
 
     def generate_2D(self):
-        size = self.settings.get_size()
-        array_3d = self.set_coordinates(self.init_3d_array())
-        layers = self.get_layers(array_3d)
+        size = self._settings.get_size()
+        array_3d = self.__set_coordinates(self.__init_3d_array())
+        layers = self.__get_layers(array_3d)
         art_len = size - 1
         
         art = ""
@@ -32,10 +32,10 @@ class Cube(Shape, PrintArt):
         return art
 
     def generate_3D(self):
-        array_3d = self.set_coordinates(self.init_3d_array())
-        layers = self.get_layers(array_3d)
+        array_3d = self.__set_coordinates(self.__init_3d_array())
+        layers = self.__get_layers(array_3d)
 
-        size = self.settings.get_size()
+        size = self._settings.get_size()
         num_of_layers = len(layers)
         art_len = size - 1
 
@@ -46,21 +46,21 @@ class Cube(Shape, PrintArt):
         art = layers[0] + "\n"
 
         for i in range(art_len):
-            art += self.unite_str(layers[index_1 + i], layers[index_2]) + "\n"
+            art += self.__unite_str(layers[index_1 + i], layers[index_2]) + "\n"
 
         index_2 = index_2 + index_2 - 1
         index_1 = num_of_layers - size 
 
         for i in range(art_len):
-            art += self.unite_str(layers[index_1 + i], layers[index_2]) + "\n"
+            art += self.__unite_str(layers[index_1 + i], layers[index_2]) + "\n"
 
         art += layers[num_of_layers-1]
 
         return art
 
 
-    def init_3d_array(self):
-        size = self.settings.get_size()
+    def __init_3d_array(self):
+        size = self._settings.get_size()
         array_3d = [[[0 for col in range(size)]for row in range(size)] for x in range(size)]
         for i in range(size):
             for j in range(size):
@@ -69,8 +69,8 @@ class Cube(Shape, PrintArt):
         return array_3d
 
 
-    def set_coordinates(self, array_3d):
-        N = self.settings.get_size() - 1
+    def __set_coordinates(self, array_3d):
+        N = self._settings.get_size() - 1
         array_3d[0][0][0] = "A"
         array_3d[N][0][0] = "B"
         array_3d[N][0][N] = "C"
@@ -82,8 +82,8 @@ class Cube(Shape, PrintArt):
 
         return array_3d
 
-    def get_layers(self, array_3d):
-        N = self.settings.get_size() - 1
+    def __get_layers(self, array_3d):
+        N = self._settings.get_size() - 1
         layers = []
         for y in range(N, -1, -1):
             for z in range(N, -1, -1):
@@ -106,7 +106,7 @@ class Cube(Shape, PrintArt):
         return layers
 
 
-    def unite_str(self, str1, str2):
+    def __unite_str(self, str1, str2):
         result = ""
         if len(str1) < len(str2):
             str1 += " " * (len(str2) - len(str1))
@@ -121,7 +121,3 @@ class Cube(Shape, PrintArt):
             else:
                 result += " "
         return result
-
-
-
-
