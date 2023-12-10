@@ -1,11 +1,22 @@
+"""
+main Module
+
+This module contains the main function of the program.
+It initializes the labs menu, imports lab modules, and runs the menu.
+
+"""
 import importlib
 import os
 
 from UI.menu import Menu
 from UI.menu_item import Item
-from config.logging.logger import logger
+from logger.logger import logger
 
 def main():
+    """
+    The main function of the program.
+    It initializes the labs menu, imports lab modules, and runs the menu.
+    """
     logger.info("The program has started.")
     labs = [f for f in os.listdir("classes") if os.path.isdir(os.path.join("classes", f))]
     labs.sort()

@@ -1,22 +1,81 @@
+"""
+Cube Module
+
+This module defines the Cube class, representing a cube shape. The Cube class is a subclass of the Shape and PrintArt classes. It provides methods for generating 2D and 3D representations of a cube, initializing a 3D array, setting coordinates in the array, and more.
+
+Classes:
+    - Cube: Represents a cube shape, inherits from Shape and PrintArt.
+
+Usage:
+    Import this module to utilize the Cube class for creating and manipulating cube shapes in a graphical context.
+"""
+from shared.settings import get_lab_settings
 from classes.lab5.art.art_settings import ArtSettings
 from classes.lab5.art.print_art import PrintArt
-from .shape import Shape
-from classes.lab5.settings import DEFAULT_SIZE, DEFAULT_JUSTIFY, DEFAULT_COLOR  
+from classes.lab5.shapes.shape import Shape
+
+settings = get_lab_settings("lab5")
+DEFAULT_SHAPE_SETTINGS = settings["default_shape_settings"]
+DEFAULT_COLOR = DEFAULT_SHAPE_SETTINGS["color"]
+DEFAULT_SIZE = DEFAULT_SHAPE_SETTINGS["size"]
+DEFAULT_JUSTIFY = DEFAULT_SHAPE_SETTINGS["justify"]
+
 
 class Cube(Shape, PrintArt):
+    """
+    Represents a cube shape.
+
+    Attributes:
+    - size: The size of the cube
+    - justify: The justification of the cube
+    - color: The color of the cube
+
+    Methods:
+    - __init__(self, size=DEFAULT_SIZE, justify=DEFAULT_JUSTIFY, color=DEFAULT_COLOR): 
+    Initializes a new instance of the Cube class.
+    - set_settings(self, settings): Sets the settings of the cube.
+    - generate_2D(self): Generates the 2D representation of the cube.
+    - generate_3D(self): Generates the 3D representation of the cube.
+    - __init_3d_array(self): Initializes a 3D array for the cube.
+    - __set_coordinates(self, array_3d): Sets the coordinates of the cube in the 3D array.
+    - __get_layers(self, array_3d): Gets the layers of the cube from the 3D array.
+    - __unite_str(self, str1, str2): Unites two strings by replacing spaces in the first 
+    string with non-space characters from the second string.
+    """
+
     def __init__(self, size=DEFAULT_SIZE, justify=DEFAULT_JUSTIFY, color=DEFAULT_COLOR):
+        """
+        Initializes a new instance of the Cube class.
+
+        Parameters:
+        - size: The size of the cube (default: DEFAULT_SIZE)
+        - justify: The justification of the cube (default: DEFAULT_JUSTIFY)
+        - color: The color of the cube (default: DEFAULT_COLOR)
+        """
         self._settings = ArtSettings(size, justify, color)
         self._art_2D = self.generate_2D()
         self._art_3D = self.generate_3D()
         PrintArt.__init__(self, self)
 
 
-    def set_settings(self, settings):
-        self._settings = settings
+    def set_settings(self, cube_settings):
+        """
+        Sets the settings of the cube.
+
+        Parameters:
+        - settings: The settings object to be set
+        """
+        self._settings = cube_settings
         self._art_2D = self.generate_2D()
         self._art_3D = self.generate_3D()
 
     def generate_2D(self):
+        """
+        Generates the 2D representation of the cube.
+
+        Returns:
+        - The 2D representation of the cube as a string
+        """
         size = self._settings.get_size()
         array_3d = self.__set_coordinates(self.__init_3d_array())
         layers = self.__get_layers(array_3d)
@@ -32,6 +91,12 @@ class Cube(Shape, PrintArt):
         return art
 
     def generate_3D(self):
+        """
+        Generates the 3D representation of the cube.
+
+        Returns:
+        - The 3D representation of the cube as a string
+        """
         array_3d = self.__set_coordinates(self.__init_3d_array())
         layers = self.__get_layers(array_3d)
 
@@ -60,6 +125,12 @@ class Cube(Shape, PrintArt):
 
 
     def __init_3d_array(self):
+        """
+        Initializes a 3D array for the cube.
+
+        Returns:
+        - The initialized 3D array
+        """
         size = self._settings.get_size()
         array_3d = [[[0 for col in range(size)]for row in range(size)] for x in range(size)]
         for i in range(size):
@@ -70,6 +141,15 @@ class Cube(Shape, PrintArt):
 
 
     def __set_coordinates(self, array_3d):
+        """
+        Sets the coordinates of the cube in the 3D array.
+
+        Parameters:
+        - array_3d: The 3D array to set the coordinates in
+
+        Returns:
+        - The updated 3D array with coordinates set
+        """
         N = self._settings.get_size() - 1
         array_3d[0][0][0] = "A"
         array_3d[N][0][0] = "B"
@@ -83,6 +163,15 @@ class Cube(Shape, PrintArt):
         return array_3d
 
     def __get_layers(self, array_3d):
+        """
+        Gets the layers of the cube from the 3D array.
+
+        Parameters:
+        - array_3d: The 3D array representing the cube
+
+        Returns:
+        - The layers of the cube as a list of strings
+        """
         N = self._settings.get_size() - 1
         layers = []
         for y in range(N, -1, -1):
@@ -107,6 +196,16 @@ class Cube(Shape, PrintArt):
 
 
     def __unite_str(self, str1, str2):
+        """
+        Unites two strings by replacing spaces in the first string with non-space characters from the second string.
+
+        Parameters:
+        - str1: The first string
+        - str2: The second string
+
+        Returns:
+        - The united string
+        """
         result = ""
         if len(str1) < len(str2):
             str1 += " " * (len(str2) - len(str1))
@@ -121,3 +220,22 @@ class Cube(Shape, PrintArt):
             else:
                 result += " "
         return result
+
+    def get_2D(self):
+        """
+        Returns the 2D representation of the cube.
+
+        Returns:
+        - The 2D representation of the cube as a string
+        """
+        return self._art_2D
+    
+    def get_3D(self):
+        """
+        Returns the 3D representation of the cube.
+
+        Returns:
+        - The 3D representation of the cube as a string
+        """
+        return self._art_3D
+    

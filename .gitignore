@@ -6,6 +6,8 @@ vars.py
 
 .env
 
-*.txt
+art*.txt
 
 *.png
+
+env

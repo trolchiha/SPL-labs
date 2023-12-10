@@ -1,14 +1,22 @@
+"""
+Module: test_runner
+
+This module contains the main function for running unit tests using the unittest module.
+
+Dependencies:
+    - unittest
+"""
 import unittest
 
-test_dir = "data/lab7/tests"
+TEST_DIR = "data/lab7/tests"
 
 def __main__():
-    loader = unittest.TestLoader()
-    suite = loader.discover(start_dir=test_dir, pattern="test_*.py")
-    runner = unittest.TextTestRunner(verbosity=2)
-    result = runner.run(suite)
+    test_loader = unittest.TestLoader()
+    suite = test_loader.discover(start_dir=TEST_DIR, pattern="test_*.py")
+    test_runner = unittest.TextTestRunner(verbosity=2)
+    test_result = test_runner.run(suite)
 
-    if result.wasSuccessful():
+    if test_result.wasSuccessful():
         print("All tests passed.")
     else:
         print("Some tests failed.")
