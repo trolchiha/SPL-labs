@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>classes.lab7.data_manupulation.data_from_console &#8212; SPL-labs 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/alabaster.css?v=039e1c02" />
+    <script src="../../../../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for classes.lab7.data_manupulation.data_from_console</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Input Handling Module</span>
+
+<span class="sd">This module provides functions for getting user input related to object names, colors, and recommendations.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">shared.input_handler</span> <span class="kn">import</span> <span class="n">InputHandler</span>
+
+<div class="viewcode-block" id="get_name">
+<a class="viewcode-back" href="../../../../classes.lab7.data_manupulation.html#classes.lab7.data_manupulation.data_from_console.get_name">[docs]</a>
+<span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get the name of an object from the user.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    obj (str): The name of the object.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    str: The name entered by the user.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">obj</span> <span class="o">=</span> <span class="n">InputHandler</span><span class="p">()</span><span class="o">.</span><span class="n">get_str_input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Enter </span><span class="si">{</span><span class="n">obj</span><span class="si">}</span><span class="s2"> name&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">obj</span></div>
+
+
+<div class="viewcode-block" id="get_color">
+<a class="viewcode-back" href="../../../../classes.lab7.data_manupulation.html#classes.lab7.data_manupulation.data_from_console.get_color">[docs]</a>
+<span class="k">def</span> <span class="nf">get_color</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get a color from the user.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    str: The color entered by the user.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">list_of_colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;RED&#39;</span><span class="p">,</span> <span class="s1">&#39;GREEN&#39;</span><span class="p">,</span> <span class="s1">&#39;YELLOW&#39;</span><span class="p">,</span> <span class="s1">&#39;BLUE&#39;</span><span class="p">,</span> <span class="s1">&#39;MAGENTA&#39;</span><span class="p">,</span> <span class="s1">&#39;CYAN&#39;</span><span class="p">,</span> <span class="s1">&#39;WHITE&#39;</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Available colors: red, green, yellow, blue, magenta, cyan, white&quot;</span><span class="p">)</span>
+    <span class="n">input_color</span> <span class="o">=</span> <span class="n">InputHandler</span><span class="p">()</span><span class="o">.</span><span class="n">get_one_of_list_input_ignore_case</span><span class="p">(</span><span class="s2">&quot;Enter color&quot;</span><span class="p">,</span> <span class="n">list_of_colors</span><span class="p">)</span>
+    <span class="n">color_name</span> <span class="o">=</span> <span class="n">input_color</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> 
+    <span class="k">return</span> <span class="n">color_name</span></div>
+
+
+<div class="viewcode-block" id="get_user_input_recommendations">
+<a class="viewcode-back" href="../../../../classes.lab7.data_manupulation.html#classes.lab7.data_manupulation.data_from_console.get_user_input_recommendations">[docs]</a>
+<span class="k">def</span> <span class="nf">get_user_input_recommendations</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get user input for recommendations.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    dict: A dictionary containing user input for genre, artist, and track recommendations.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">user_input</span> <span class="o">=</span> <span class="n">InputHandler</span><span class="p">()</span><span class="o">.</span><span class="n">get_str_input</span><span class="p">(</span><span class="s2">&quot;Enter parameters for recommendations</span><span class="se">\n</span><span class="s2">e.g. genre=pop, rock; track=blinding lights; artist=the weeknd, metallica</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\b(genre|artist|track)\s*=\s*([^;]+)(?:;|$)&#39;</span><span class="p">)</span>
+
+    <span class="n">user_recommendations</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;genre&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;artist&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;track&#39;</span><span class="p">:</span> <span class="p">[]}</span>
+
+    <span class="n">matches</span> <span class="o">=</span> <span class="n">pattern</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">user_input</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">matches</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No matches&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
+        <span class="n">category</span><span class="p">,</span> <span class="n">values</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span>
+        <span class="n">user_recommendations</span><span class="p">[</span><span class="n">category</span><span class="p">]</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">value</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">values</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)])</span>
+
+    <span class="k">return</span> <span class="n">user_recommendations</span></div>
+
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../index.html">SPL-labs</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modules.html">labs</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Olena.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

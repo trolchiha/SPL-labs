@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>shared.input_handler &#8212; SPL-labs 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=039e1c02" />
+    <script src="../../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for shared.input_handler</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">InputHandler Module</span>
+
+<span class="sd">This module provides a class for handling user input. The `InputHandler` class includes methods</span>
+<span class="sd">for obtaining various types of input from the user, such as strings, integers, floats, single characters,</span>
+<span class="sd">and input from a predefined list. It also supports input validation based on custom conditions.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<div class="viewcode-block" id="InputHandler">
+<a class="viewcode-back" href="../../shared.html#shared.input_handler.InputHandler">[docs]</a>
+<span class="k">class</span> <span class="nc">InputHandler</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A class that handles user input.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        input_data (str): The user&#39;s input data.</span>
+
+<span class="sd">    Methods:</span>
+<span class="sd">        get_str_input: Get a string input from the user.</span>
+<span class="sd">        get_int_input: Get an integer input from the user.</span>
+<span class="sd">        get_float_input: Get a float input from the user.</span>
+<span class="sd">        get_one_char_input: Get a single character input from the user.</span>
+<span class="sd">        get_one_of_list_input: Get an input from the user that must be one of the specified list items.</span>
+<span class="sd">        get_one_of_list_input_ignore_case: Get an input from the user that must be one of the specified </span>
+<span class="sd">        list items, ignoring case.</span>
+<span class="sd">        check_input_in_list_ignore_case: Check if the input is in the list, ignoring case.</span>
+<span class="sd">        check_input_in_list: Check if the input is in the list.</span>
+<span class="sd">        get_input_with_condition: Get an input from the user that satisfies the specified condition.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initializes the InputHandler object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="InputHandler.get_str_input">
+<a class="viewcode-back" href="../../shared.html#shared.input_handler.InputHandler.get_str_input">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_str_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get a string input from the user.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            message (str): The message to display to the user.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: The user&#39;s input as a string.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">input_data</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">: &quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span> <span class="o">=</span> <span class="n">input_data</span>
+        <span class="k">return</span> <span class="n">input_data</span></div>
+
+    
+<div class="viewcode-block" id="InputHandler.get_int_input">
+<a class="viewcode-back" href="../../shared.html#shared.input_handler.InputHandler.get_int_input">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_int_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get an integer input from the user.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            message (str): The message to display to the user.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            int: The user&#39;s input as an integer.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">input_data</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">: &quot;</span><span class="p">)</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="n">input_data</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;The input </span><span class="si">%s</span><span class="s2"> is not a number.&quot;</span><span class="p">,</span> <span class="n">input_data</span><span class="p">)</span>
+            <span class="n">input_data</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">: &quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span> <span class="o">=</span> <span class="n">input_data</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span></div>
+
+    
+<div class="viewcode-block" id="InputHandler.get_float_input">
+<a class="viewcode-back" href="../../shared.html#shared.input_handler.InputHandler.get_float_input">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_float_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get a float input from the user.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            message (str): The message to display to the user.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: The user&#39;s input as a float.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">input_data</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">: &quot;</span><span class="p">)</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="n">input_data</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;The input </span><span class="si">%s</span><span class="s2"> is not a float number.&quot;</span><span class="p">,</span> <span class="n">input_data</span><span class="p">)</span>
+            <span class="n">input_data</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">: &quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span> <span class="o">=</span> <span class="n">input_data</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span></div>
+
+    
+<div class="viewcode-block" id="InputHandler.get_one_char_input">
+<a class="viewcode-back" href="../../shared.html#shared.input_handler.InputHandler.get_one_char_input">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_one_char_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get a single character input from the user.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            message (str): The message to display to the user.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: The user&#39;s input as a single character.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">input_data</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">: &quot;</span><span class="p">)</span>
+        <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;The input </span><span class="si">%s</span><span class="s2"> is not one character.&quot;</span><span class="p">,</span> <span class="n">input_data</span><span class="p">)</span>
+            <span class="n">input_data</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">: &quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span> <span class="o">=</span> <span class="n">input_data</span>
+        <span class="k">return</span> <span class="n">input_data</span></div>
+
+    
+<div class="viewcode-block" id="InputHandler.get_one_of_list_input">
+<a class="viewcode-back" href="../../shared.html#shared.input_handler.InputHandler.get_one_of_list_input">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_one_of_list_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">check_list</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get an input from the user that must be one of the specified list items.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            message (str): The message to display to the user.</span>
+<span class="sd">            list (list): The list of valid input options.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: The user&#39;s input as one of the list items.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">input_data</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">: &quot;</span><span class="p">)</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_input_in_list</span><span class="p">(</span><span class="n">input_data</span><span class="p">,</span> <span class="n">check_list</span><span class="p">):</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;The input </span><span class="si">%s</span><span class="s2"> is not in the list.&quot;</span><span class="p">,</span> <span class="n">input_data</span><span class="p">)</span>
+            <span class="n">input_data</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">: &quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span> <span class="o">=</span> <span class="n">input_data</span>
+        <span class="k">return</span> <span class="n">input_data</span></div>
+
+    
+<div class="viewcode-block" id="InputHandler.get_one_of_list_input_ignore_case">
+<a class="viewcode-back" href="../../shared.html#shared.input_handler.InputHandler.get_one_of_list_input_ignore_case">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_one_of_list_input_ignore_case</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">check_list</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get an input from the user that must be one of the specified list items, ignoring case.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            message (str): The message to display to the user.</span>
+<span class="sd">            list (list): The list of valid input options.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: The user&#39;s input as one of the list items.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">input_data</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">: &quot;</span><span class="p">)</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_input_in_list_ignore_case</span><span class="p">(</span><span class="n">input_data</span><span class="p">,</span> <span class="n">check_list</span><span class="p">):</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;The input </span><span class="si">%s</span><span class="s2"> is not in the list.&quot;</span><span class="p">,</span> <span class="n">input_data</span><span class="p">)</span>
+            <span class="n">input_data</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">: &quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span> <span class="o">=</span> <span class="n">input_data</span>
+        <span class="k">return</span> <span class="n">input_data</span></div>
+
+    
+<div class="viewcode-block" id="InputHandler.check_input_in_list_ignore_case">
+<a class="viewcode-back" href="../../shared.html#shared.input_handler.InputHandler.check_input_in_list_ignore_case">[docs]</a>
+    <span class="k">def</span> <span class="nf">check_input_in_list_ignore_case</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_data</span><span class="p">,</span> <span class="n">check_list</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if the input is in the list, ignoring case.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            input_data (str): The input to check.</span>
+<span class="sd">            list (list): The list of valid input options.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool: True if the input is in the list, False otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">input_data</span> <span class="o">=</span> <span class="n">input_data</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">check_list</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">input_data</span> <span class="o">==</span> <span class="n">item</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+                <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="kc">False</span></div>
+
+    
+<div class="viewcode-block" id="InputHandler.check_input_in_list">
+<a class="viewcode-back" href="../../shared.html#shared.input_handler.InputHandler.check_input_in_list">[docs]</a>
+    <span class="k">def</span> <span class="nf">check_input_in_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_data</span><span class="p">,</span> <span class="n">check_list</span><span class="p">):</span>   
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if the input is in the list.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            input_data (str): The input to check.</span>
+<span class="sd">            list (list): The list of valid input options.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool: True if the input is in the list, False otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">input_data</span> <span class="ow">in</span> <span class="n">check_list</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="kc">False</span></div>
+
+    
+<div class="viewcode-block" id="InputHandler.get_input_with_condition">
+<a class="viewcode-back" href="../../shared.html#shared.input_handler.InputHandler.get_input_with_condition">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_input_with_condition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">condition</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get an input from the user that satisfies the specified condition.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            message (str): The message to display to the user.</span>
+<span class="sd">            condition (function): The condition that the input must satisfy.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: The user&#39;s input that satisfies the condition.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">input_data</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">: &quot;</span><span class="p">)</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="n">condition</span><span class="p">(</span><span class="n">input_data</span><span class="p">):</span>
+            <span class="n">input_data</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">: &quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span> <span class="o">=</span> <span class="n">input_data</span>
+        <span class="k">return</span> <span class="n">input_data</span></div>
+</div>
+
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">SPL-labs</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">labs</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Olena.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
