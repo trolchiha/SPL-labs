@@ -1,0 +1,3 @@
+"""
+Figlet package
+"""

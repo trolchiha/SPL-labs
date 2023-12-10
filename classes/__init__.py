@@ -1,0 +1,3 @@
+"""
+Сlasses module
+"""

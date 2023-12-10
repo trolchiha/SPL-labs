@@ -1,0 +1,3 @@
+"""
+Art Generator package
+"""
