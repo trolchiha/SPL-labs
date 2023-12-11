@@ -24,6 +24,8 @@ Methods:
 """
 from pyfiglet import Figlet
 from termcolor import colored
+from UI.menu import Menu
+from UI.menu_item import Item
 from shared.settings import get_lab_settings
 from shared.file_handler import FileHandler
 from classes.lab3.figlet.figlet_settings import FigletSettings
@@ -48,17 +50,16 @@ class FigletGenerator:
         self.__settings = FigletSettings()
         self.__figlet = None
 
-# def menu(self):
-    #     main_menu = Menu("\nMenu")
-    #     main_menu.set_color('grey')
-    #     main_menu.add_item(Item('1', 'Generate art', self.generate_art))
-    #     main_menu.add_item(Item('2', 'Change settings', self.change_settings))
-    #     main_menu.add_item(Item('3', 'Preview', self.view_art ))
-    #     main_menu.add_item(Item('4', 'Save art', self.save_art))
-    #     main_menu.add_item(Item('5', 'View saved art', self.view_saved_art))
-    #     main_menu.add_item(Item('0', 'Exit'))
-        
-        # main_menu.run()
+    def menu(self):
+            main_menu = Menu("\nMenu")
+            main_menu.add_item(Item('1', 'Generate art', self.generate_art))
+            main_menu.add_item(Item('2', 'Change settings', self.change_settings))
+            main_menu.add_item(Item('3', 'Preview', self.view_art ))
+            main_menu.add_item(Item('4', 'Save art', self.save_art))
+            main_menu.add_item(Item('5', 'View saved art', self.view_saved_art))
+            main_menu.add_item(Item('0', 'Exit'))
+            
+            main_menu.run()
 
     def get_text(self):
         """

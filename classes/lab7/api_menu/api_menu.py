@@ -84,15 +84,15 @@ class APIMenu:
         self.history = History(HISTORY_FILE_PATH)
         self.data_visualization = DataVisualization()
 
-    # def menu(self):
-    #     menu = Menu("\nSpotify API Menu")
-    #     menu.set_color("green")
-    #     menu.add_item(Item("1", "Search Menu", self.search_menu))
-    #     menu.add_item(Item("2", "Artist Menu", self.player_menu))
-    #     menu.add_item(Item("3", "History Menu", self.history_menu))
-    #     menu.add_item(Item("4", "Tests", tests.__main__))
-    #     menu.add_item(Item("0", "Exit", ))
-    #     menu.run()
+    def menu(self):
+        menu = Menu("\nSpotify API Menu")
+        menu.set_color("green")
+        menu.add_item(Item("1", "Search Menu", self.search_menu))
+        menu.add_item(Item("2", "Artist Menu", self.player_menu))
+        menu.add_item(Item("3", "History Menu", self.history_menu))
+        menu.add_item(Item("4", "Tests", tests.__main__))
+        menu.add_item(Item("0", "Exit", ))
+        menu.run()
 
     def history_menu(self):
         """

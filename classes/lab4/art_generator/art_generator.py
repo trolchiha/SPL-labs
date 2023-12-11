@@ -32,6 +32,8 @@ from termcolor import colored
 from classes.lab4.art_settings.art_settings import ArtSettings
 from classes.lab4.console_reader.data_from_console import get_text_from_console, get_console_width
 from classes.lab4.font.font import font_dict
+from UI.menu import Menu
+from UI.menu_item import Item
 from shared.file_handler import FileHandler
 from shared.settings import get_lab_settings
 
@@ -66,6 +68,22 @@ class ArtGenerator:
         self.__text = None
         self.__settings = ArtSettings()
         self.__art = None
+
+    def menu(self):
+        """
+        This function creates and runs a menu for the Art Generator program.
+        It  adds menu items for various actions such as setting art text, changing settings, viewing art,
+        saving art to a file, viewing saved art, and exiting the program.
+        """
+        art_menu = Menu("\nArt Menu (Lab 4)")
+        art_menu.add_item(Item('1', 'Set Art Text', self.set_text))
+        art_menu.add_item(Item('2', 'Change Settings', self.change_settings))
+        art_menu.add_item(Item('3', 'View Art', self.view_art))
+        art_menu.add_item(Item('4', 'Save Art to File', self.save_art_to_file))
+        art_menu.add_item(Item('5', 'View Saved Art', self.view_saved_art))
+        art_menu.add_item(Item('0', 'Exit'))
+
+        art_menu.run()
 
     def set_text(self):
         """

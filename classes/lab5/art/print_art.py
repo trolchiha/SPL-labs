@@ -54,7 +54,7 @@ class PrintArt:
         """
         art = self.__justify_art(self._shape.get_2D())
         print(colored("\nArt 2D\n"))
-        print(colored(art, self._shape.get_settings_obj().get_color()))
+        print(colored(art, self._shape.get_settings().get_color()))
 
     def print_art_3D(self):
         """
@@ -62,7 +62,7 @@ class PrintArt:
         """
         art = self.__justify_art(self._shape.get_3D())
         print(colored("\nArt 3D\n"))
-        print(colored(art, self._shape.get_settings_obj().get_color()))
+        print(colored(art, self._shape.get_settings().get_color()))
 
     def __justify_art(self, art):
         """
@@ -91,8 +91,8 @@ class PrintArt:
         - The padding value.
         """
         console_width = get_console_width()
-        art_len = len(art)//self._shape.get_settings_obj().get_size()
-        justify = self._shape.get_settings_obj().get_justify()
+        art_len = len(art)//self._shape.get_settings().get_size()
+        justify = self._shape.get_settings().get_justify()
         
         if justify == "center":
             return (console_width - art_len) // 2

@@ -3,7 +3,7 @@ Settings module
 """
 import json
 
-CONFIG_FILE_PATH = 'config/init.json'
+CONFIG_FILE_PATH = 'config/conf.json'
 
 def load_config():
     """

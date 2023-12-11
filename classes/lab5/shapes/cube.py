@@ -69,6 +69,16 @@ class Cube(Shape, PrintArt):
         self._art_2D = self.generate_2D()
         self._art_3D = self.generate_3D()
 
+        
+    def get_settings(self):
+        """
+        Returns the settings of the cube.
+
+        Returns:
+        - The settings of the cube
+        """
+        return self._settings
+
     def generate_2D(self):
         """
         Generates the 2D representation of the cube.
@@ -238,4 +248,3 @@ class Cube(Shape, PrintArt):
         - The 3D representation of the cube as a string
         """
         return self._art_3D
-    

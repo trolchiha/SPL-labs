@@ -5,6 +5,8 @@ This module defines the Calculator class, representing a calculator with methods
 changing decimal places, viewing history, and clearing history. It uses components from other modules, such as
 the History class, math_operations module, and console_reader module.
 """
+from UI.menu import Menu
+from UI.menu_item import Item
 from shared.history import History
 from shared.settings import get_lab_settings
 from classes.lab1.math_operations.math_operations import make_calculations
@@ -46,14 +48,14 @@ class Calculator:
         self.history = History(HISTORY_PATH)
         self.decimal_places = DECIMAL_PLACES
 
-# def menu(self):
-        # self.terminal_menu = Menu("Menu")
-    #     self.terminal_menu.add_item(Item("1", "Perform calculations", self.perform_calculations))
-    #     self.terminal_menu.add_item(Item("2", "Change decimal places (default 2)", self.change_decimal_places))
-    #     self.terminal_menu.add_item(Item("3", "View history", self.view_history))
-    #     self.terminal_menu.add_item(Item("4", "Clear history", self.clear_history))
-    #     self.terminal_menu.add_item(Item("0", "Exit", self.exit))
-    #     self.terminal_menu.run()
+    def menu(self):
+            self.terminal_menu = Menu("Menu")
+            self.terminal_menu.add_item(Item("1", "Perform calculations", self.perform_calculations))
+            self.terminal_menu.add_item(Item("2", "Change decimal places (default 2)", self.change_decimal_places))
+            self.terminal_menu.add_item(Item("3", "View history", self.view_history))
+            self.terminal_menu.add_item(Item("4", "Clear history", self.clear_history))
+            self.terminal_menu.add_item(Item("0", "Exit"))
+            self.terminal_menu.run()
 
     def get_history(self):
         """

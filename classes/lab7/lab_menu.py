@@ -15,7 +15,7 @@ Usage:
 import classes.lab7.tests.main as tests
 from UI.menu import Menu
 from UI.menu_item import Item
-from .api_menu import APIMenu
+from .api_menu.api_menu import APIMenu
 
 def lab_menu():
     """
