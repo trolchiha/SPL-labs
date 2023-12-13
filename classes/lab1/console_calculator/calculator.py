@@ -1,20 +1,8 @@
 """
-calculator Module
+Calculator Module
 
 This module provides functions for making calculations, formatting results,
 changing decimal places, and managing calculation history.
-
-The main functions include:
-- `make_calculation`: Makes a calculation based on user input.
-- `format_result`: Formats the calculation result based on the operator.
-- `print_calculation_result`: Prints the calculation result and prompts the user to save it.
-- `change_decimal_places`: Prompts the user to enter the number of decimal places and writes it to the history file.
-- `write_decimal_places_to_file`: Writes the number of decimal places to the history file.
-- `get_decimal_places_from_history`: Retrieves the number of decimal places from the history file.
-- `create_history_file`: Creates a history file with default decimal places.
-- `view_history`: Prints the history of calculations.
-- `clear_history`: Clears the history of calculations.
-
 """
 
 import re

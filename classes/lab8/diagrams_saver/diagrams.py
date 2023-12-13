@@ -1,5 +1,7 @@
 """
-Diagrams module
+Diagrams Module
+
+A module that defines the Diagrams class for creating and visualizing diagrams based on data from a CSV file.
 """
 from datetime import datetime
 import pandas as pd
@@ -18,21 +20,6 @@ class Diagrams:
 
     Attributes:
     - df (pandas.DataFrame): The DataFrame containing the loaded data from the CSV file.
-
-    Methods:
-    - __init__(self, csv_file_path): Initializes a Diagrams object.
-    - load_csv(self, csv_file_path): Loads a CSV file into a pandas DataFrame.
-    - print_min_values(self): Prints the minimum values for each column in the DataFrame.
-    - print_max_values(self): Prints the maximum values for each column in the DataFrame.
-    - get_age(self): Calculates the age of each person in the DataFrame.
-    - visualize_histogram(self): Visualizes a histogram of the number of people by country.
-    - visualize_column_diagram(self): Visualizes a column diagram of the average age of people by country.
-    - visualize_sector_diagram(self, year=DEFAULT_YEAR): Visualizes a sector diagram 
-    of the percentage of people born after a given year by country.
-    - visualize_line_plot_and_sector(self, month=DEFAULT_MONTH): Visualizes a line plot of the 
-    average age of people born in a specific month by country, along with a pie chart showing 
-    the distribution of countries used in the line plot.
-    - export_data(self, fig, file_name='diagram'): Exports the diagram to a PNG file.
     """
 
     def __init__(self, csv_file_path):

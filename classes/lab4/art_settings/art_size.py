@@ -2,29 +2,6 @@
 Module: art_size
 
 This module defines the ArtSize class, which represents the size of an art.
-
-Attributes:
-    DEFAULT_WIDTH (int): Default width for the art.
-    DEFAULT_HEIGHT (int): Default height for the art.
-
-Classes:
-    ArtSize:
-        A class representing the size of an art.
-
-Methods:
-    - __init__(self, width=DEFAULT_WIDTH, height=DEFAULT_HEIGHT): 
-    Initializes the ArtSize object.
-    - __str__(self): Returns a string representation of the ArtSize object.
-    - set_width(self, width): Sets the width of the art.
-    - set_height(self, height): Sets the height of the art.
-    - set_chars(self, chars): Sets the characters representing the art.
-    - get_width(self): Returns the width of the art.
-    - get_height(self): Returns the height of the art.
-    - get_chars(self): Returns the characters representing the art.
-    - get_resized_chars(self): Returns the resized characters representing the art.
-    - __change_char_size(self, matrix): Changes the size of a character matrix.
-    - __change_width(self, matrix): Changes the width of a character matrix.
-    - __change_height(self, matrix): Changes the height of a character matrix.
 """
 import numpy as np
 from shared.settings import get_lab_settings
@@ -42,17 +19,6 @@ class ArtSize:
         _width (int): The width of the art.
         _height (int): The height of the art.
         _chars (list): The characters representing the art.
-
-    Methods:
-        __init__(self, width=DEFAULT_WIDTH, height=DEFAULT_HEIGHT): Initializes the ArtSize object.
-        __str__(self): Returns a string representation of the ArtSize object.
-        set_width(self, width): Sets the width of the art.
-        set_height(self, height): Sets the height of the art.
-        set_chars(self, chars): Sets the characters representing the art.
-        get_width(self): Returns the width of the art.
-        get_height(self): Returns the height of the art.
-        get_chars(self): Returns the characters representing the art.
-        get_resized_chars(self): Returns the resized characters representing the art.
     """
 
     def __init__(self, width=DEFAULT_WIDTH, height=DEFAULT_HEIGHT):

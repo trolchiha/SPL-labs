@@ -2,11 +2,6 @@
 data_from_console Module
 
 This module provides functions for getting parameters and an operator from the console.
-
-The main functions include:
-- `get_parameters_from_console`: Gets two float numbers from the console.
-- `get_operator_from_console`: Gets an operator from the console.
-
 """
 
 from shared.input_handler import InputHandler

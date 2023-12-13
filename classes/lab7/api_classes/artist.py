@@ -1,8 +1,7 @@
 """
-Spotify API Module
+Artist Module
 
-This module contains classes and functions for interacting with the Spotify API.
-It includes classes for working with artists, albums, tracks, etc.
+This module defines the Artist class for retrieving artist information from an API.
 """
 from shared.settings import get_lab_settings
 from classes.lab7.api_classes.api_error_handling.api_error_handling import APIError, APIRequest
@@ -14,6 +13,10 @@ BASE_URL = settings["urls"]["base_url"]
 class Artist:
     """
     Represents an artist and provides methods for retrieving artist information from an API.
+    Attributes:
+        id (str): The ID of the artist.
+        artist_name (str): The name of the artist.
+        spotify_link (str): The Spotify link of the artist.
     """
 
     def __init__(self):

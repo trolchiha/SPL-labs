@@ -1,4 +1,6 @@
 """
+Art Menu Module
+
 A module that defines the ArtMenu class for creating and manipulating shapes.
 """
 from UI.menu import Menu
@@ -18,30 +20,20 @@ class ArtMenu:
 
     Attributes:
     - __shape: The currently selected shape.
-
-    Methods:
-    - __init__(self): Initializes an instance of the ArtMenu class.
-    - set_shape(self): Sets the shape based on user input.
-    - get_shape(self): Returns the currently selected shape.
-    - sub_menu(self): Displays a sub-menu for viewing and manipulating the shape.
-    - view_art_2D(self): Prints the 2D representation of the shape.
-    - view_art_3D(self): Prints the 3D representation of the shape.
-    - change_settings(self): Displays a menu for changing the settings of the shape.
-    - save_menu(self): Displays a menu for saving and viewing the saved art.
-    - _save_to_file_2D(self): Saves the 2D representation of the shape to a file.
-    - _save_to_file_3D(self): Saves the 3D representation of the shape to a file.
-    - _view_saved_2D(self): Reads and displays the saved 2D art from a file.
-    - _view_saved_3D(self): Reads and displays the saved 3D art from a file.
     """
     def __init__(self):
         self.__shape = None
 
     def main_menu(self):
-            art_menu = Menu("\nArt Menu")
-            art_menu.add_item(Item('1', 'Choose shape', self.set_shape))
-            art_menu.add_item(Item('0', 'Exit'))
+        """
+        Displays the main menu for the art program.
+        Allows the user to choose a shape or exit the program.
+        """
+        art_menu = Menu("\nArt Menu")
+        art_menu.add_item(Item('1', 'Choose shape', self.set_shape))
+        art_menu.add_item(Item('0', 'Exit'))
 
-            art_menu.run()
+        art_menu.run()
 
     def set_shape(self):
         """

@@ -1,13 +1,10 @@
 """
 Pyramid Module
 
-This module defines the Pyramid class, representing a pyramid shape. The Pyramid class is a subclass of the Shape and PrintArt classes. It provides methods for generating 2D and 3D representations of a pyramid, initializing a 3D array, setting coordinates in the array, and more.
-
-Classes:
-    - Pyramid: Represents a pyramid shape, inherits from Shape and PrintArt.
-
-Usage:
-    Import this module to utilize the Pyramid class for creating and manipulating pyramid shapes in a graphical context.
+This module defines the Pyramid class, representing a pyramid shape. 
+The Pyramid class is a subclass of the Shape and PrintArt classes. 
+It provides methods for generating 2D and 3D representations of a pyramid, 
+initializing a 3D array, setting coordinates in the array, and more.
 """
 from classes.lab5.art.art_settings import ArtSettings
 from classes.lab5.art.print_art import PrintArt

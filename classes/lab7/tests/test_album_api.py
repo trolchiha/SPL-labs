@@ -2,15 +2,6 @@
 Module: test_album
 
 This module contains unit tests for the Album class.
-
-Classes:
-    TestAlbumClass:
-        This class contains unit tests for the Album class.
-
-Methods:
-    - setUp(self): Set up the test case by creating an instance of the Album class.
-    - test_successful_request(self): Test the successful request to get album JSON from the API.
-    - test_no_album_found(self): Test the case where no album is found in the API.
 """
 import unittest
 from classes.lab7.api_classes.album import Album

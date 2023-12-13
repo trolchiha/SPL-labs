@@ -4,26 +4,6 @@ ArtSettings Module
 This module defines the ArtSettings class, which represents the settings for creating art. 
 It includes methods for initializing settings, getting and setting individual settings, 
 changing settings interactively through the console, and viewing the current settings.
-
-Classes:
-    ArtSettings: Represents the settings for creating art.
-
-Usage:
-    Import this module and create an instance of the ArtSettings class to manage art creation settings. 
-    The class provides methods for interacting with and modifying various settings.
-
-Example:
-    # Import the module
-    from your_module_name import ArtSettings
-
-    # Create an instance of ArtSettings
-    art_settings = ArtSettings()
-
-    # Use methods to modify and interact with settings
-    art_settings.change_symbol()
-    art_settings.change_size()
-    art_settings.view_settings()
-    art_settings.menu()
 """
 from UI.menu import Menu
 from UI.menu_item import Item

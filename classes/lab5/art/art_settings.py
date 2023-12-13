@@ -1,4 +1,6 @@
 """
+Art Settings Module
+
 A module that defines the ArtSettings class representing the settings for creating art.
 """
 from UI.menu import Menu
@@ -13,24 +15,19 @@ class ArtSettings:
         __size (int): The size of the art.
         __justify (str): The justification of the art.
         __color (str): The color of the art.
-
-    Methods:
-        __init__(self, size=5, justify="left", color="white"): Initializes a new instance of the ArtSettings class.
-        __str__(self): Returns a string representation of the ArtSettings object.
-        settings_menu(self): Displays the settings menu.
-        change_size(self): Changes the size of the art.
-        change_color(self): Changes the color of the art.
-        change_justify(self): Changes the justification of the art.
-        set_size(self, size): Sets the size of the art.
-        set_color(self, color): Sets the color of the art.
-        set_justify(self, justify): Sets the justification of the art.
-        get_size(self): Returns the size of the art.
-        get_color(self): Returns the color of the art.
-        get_justify(self): Returns the justification of the art.
-        get_settings_obj(self): Returns the ArtSettings object.
-        print_settings(self): Prints the current settings of the art.
     """
     def __init__(self, size=5, justify="left", color="white"):
+        """
+        Initializes an instance of the ArtSettings class.
+
+        Args:
+            size (int): The size of the art.
+            justify (str): The justification of the art.
+            color (str): The color of the art.
+
+        Returns:
+            None
+        """
         self.__size = size
         self.__justify = justify
         self.__color = color

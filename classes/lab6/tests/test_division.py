@@ -2,22 +2,6 @@
 Module: test_math_operations
 
 This module contains test cases for the count_quotient function in the math_operations module.
-
-Classes:
-    DivisionTestCase:
-        Test case for the count_quotient function in the math_operations module.
-
-Methods:
-    - test_division_positive_numbers(self): Test division of two positive numbers.
-    - test_division_negative_numbers(self): Test division of two negative numbers.
-    - test_division_mixed_numbers(self): Test division of a positive number and a negative number.
-    - test_division_int_by_zero(self): Test division of an integer by zero.
-    - test_division_positive_floats(self): Test division of two positive floats.
-    - test_division_negative_floats(self): Test division of two negative floats.
-    - test_division_mixed_floats(self): Test division of a positive float and a negative float.
-    - test_division_float_by_zero(self): Test division of a float by zero.
-    - test_division_int_and_float(self): Test division of an integer and a float.
-    - test_division_float_and_int(self): Test division of a float and an integer.
 """
 import unittest
 

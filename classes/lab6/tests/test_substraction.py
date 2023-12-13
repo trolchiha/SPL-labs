@@ -2,22 +2,6 @@
 Module: test_math_operations
 
 This module contains test cases for the count_difference function in the math_operations module.
-
-Classes:
-    SubtractionTestCase:
-        Test case for the count_difference function in the math_operations module.
-
-Methods:
-    - test_subtraction_positive_numbers(self): Test subtraction of two positive numbers.
-    - test_subtraction_negative_numbers(self): Test subtraction of two negative numbers.
-    - test_subtraction_mixed_numbers(self): Test subtraction of a positive and a negative number.
-    - test_subtraction_int_and_zero(self): Test subtraction of an integer and zero.
-    - test_subtraction_positive_floats(self): Test subtraction of two positive floats.
-    - test_subtraction_negative_floats(self): Test subtraction of two negative floats.
-    - test_subtraction_mixed_floats(self): Test subtraction of a positive float and a negative float.
-    - test_subtraction_float_and_zero(self): Test subtraction of a float and zero.
-    - test_subtraction_int_and_float(self): Test subtraction of an integer and a float.
-    - test_subtraction_float_and_int(self): Test subtraction of a float and an integer.
 """
 import unittest
 

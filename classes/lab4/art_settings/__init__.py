@@ -1,3 +1,0 @@
-"""
-Art Settings package
-"""

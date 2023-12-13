@@ -2,11 +2,6 @@
 Module: console_input_handler
 
 This module provides functions for handling user input from the console.
-
-Dependencies:
-    - termcolor
-    - curses
-    - shared.input_handler
 """
 import curses
 import termcolor

@@ -2,13 +2,6 @@
 Module: data_from_console
 
 This module contains functions that prompt the user to enter various parameters from the console.
-
-Functions:
-    - get_font_from_console(): Prompts the user to enter a font name from the available fonts.
-    - get_width_from_console(): Prompts the user to enter the width.
-    - get_symbol_from_console(): Prompts the user to enter a symbol.
-    - get_color_from_console(): Prompts the user to enter a color name from the available colors.
-    - get_text_from_console(): Prompts the user to enter a text.
 """
 import pyfiglet
 import termcolor

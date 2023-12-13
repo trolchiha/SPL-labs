@@ -2,22 +2,6 @@
 Module: test_math_operations
 
 This module contains test cases for the count_product function in the math_operations module.
-
-Classes:
-    MultiplicationTestCase:
-        Test case for the count_product function in the math_operations module.
-
-Methods:
-    - test_multiplication_positive_numbers(self): Test multiplication of two positive numbers.
-    - test_multiplication_negative_numbers(self): Test multiplication of two negative numbers.
-    - test_multiplication_mixed_numbers(self): Test multiplication of a positive and a negative number.
-    - test_multiplication_int_and_zero(self): Test multiplication of an integer and zero.
-    - test_multiplication_positive_floats(self): Test multiplication of two positive floats.
-    - test_multiplication_negative_floats(self): Test multiplication of two negative floats.
-    - test_multiplication_mixed_floats(self): Test multiplication of a positive float and a negative float.
-    - test_multiplication_float_and_zero(self): Test multiplication of a float and zero.
-    - test_multiplication_int_and_float(self): Test multiplication of an integer and a float.
-    - test_multiplication_float_and_int(self): Test multiplication of a float and an integer.
 """
 import unittest
 

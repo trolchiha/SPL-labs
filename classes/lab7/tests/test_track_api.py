@@ -2,15 +2,6 @@
 Module: test_track_class
 
 This module contains unit tests for the Track class.
-
-Classes:
-    TestTrackClass:
-        A test case for the Track class.
-
-Methods:
-    - setUp(self): Set up the test case by creating an instance of the Track class.
-    - test_successful_request(self): Test a successful request to get track information from the API.
-    - test_no_track_found(self): Test the case where no track is found in the API.
 """
 import unittest
 from classes.lab7.api_classes.track import Track

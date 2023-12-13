@@ -1,3 +1,0 @@
-"""
-Console reader package
-"""

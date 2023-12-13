@@ -25,17 +25,6 @@ class Calculator:
     Attributes:
     - history (History): The history of calculations.
     - decimal_places (int): The number of decimal places to round the results to.
-
-    Methods:
-    - get_history(): Returns the history of calculations.
-    - get_decimal_places(): Returns the number of decimal places.
-    - set_decimal_places(decimal_places): Sets the number of decimal places.
-    - perform_calculations(): Performs calculations based on user input.
-    - change_decimal_places(): Changes the number of decimal places.
-    - format_result(parameter1, parameter2, operator, calculation_result): Formats the calculation result.
-    - print_calculation_result(result): Prints the calculation result and saves it to history if requested.
-    - view_history(): Prints the calculation history.
-    - clear_history(): Clears the calculation history.
     """
 
     def __init__(self):
@@ -49,13 +38,16 @@ class Calculator:
         self.decimal_places = DECIMAL_PLACES
 
     def menu(self):
-            self.terminal_menu = Menu("Menu")
-            self.terminal_menu.add_item(Item("1", "Perform calculations", self.perform_calculations))
-            self.terminal_menu.add_item(Item("2", "Change decimal places (default 2)", self.change_decimal_places))
-            self.terminal_menu.add_item(Item("3", "View history", self.view_history))
-            self.terminal_menu.add_item(Item("4", "Clear history", self.clear_history))
-            self.terminal_menu.add_item(Item("0", "Exit"))
-            self.terminal_menu.run()
+        """
+        Displays a menu with options for the user to choose from.
+        """
+        self.terminal_menu = Menu("Menu")
+        self.terminal_menu.add_item(Item("1", "Perform calculations", self.perform_calculations))
+        self.terminal_menu.add_item(Item("2", "Change decimal places (default 2)", self.change_decimal_places))
+        self.terminal_menu.add_item(Item("3", "View history", self.view_history))
+        self.terminal_menu.add_item(Item("4", "Clear history", self.clear_history))
+        self.terminal_menu.add_item(Item("0", "Exit"))
+        self.terminal_menu.run()
 
     def get_history(self):
         """

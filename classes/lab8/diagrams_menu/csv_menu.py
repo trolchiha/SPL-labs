@@ -2,15 +2,6 @@
 Module: csv_menu
 
 This module contains the CSVMenu class, which represents a CSV menu for displaying extreme values and diagrams.
-
-Classes:
-    - CSVMenu: A class representing a CSV menu.
-
-Dependencies:
-    - UI.menu.Menu
-    - UI.menu_item.Item
-    - csv_menu.diagrams.Diagrams
-    - csv_menu.settings.CSV_FILE_PATH
 """
 from UI.menu import Menu
 from UI.menu_item import Item
@@ -27,13 +18,6 @@ class CSVMenu:
     Attributes:
     - csv_file_path (str): The path to the CSV file.
     - diagrams (Diagrams): An instance of the Diagrams class.
-
-    Methods:
-    - main_menu(): Displays the main menu.
-    - values_menu(): Displays the values menu.
-    - diagram_menu(): Displays the diagram menu.
-    - visuzlize_pie_chart_with_input(): Visualizes a pie chart based on user input.
-    - visuzlize_line_plot_and_sector_with_input(): Visualizes a line plot and sector diagram based on user input.
     """
 
     def __init__(self) :

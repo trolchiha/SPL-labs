@@ -5,16 +5,6 @@ This module provides a command-line interface for interacting with the Spotify A
 It includes a menu system with options to search for artists, tracks, and albums,
 retrieve artist-related information, get recommendations, manage user history,
 and save or print the obtained data in different formats.
-
-Classes:
-- APIMenu: A class representing the API Menu for Spotify API.
-
-Attributes:
-- HISTORY_FILE_PATH: The file path to store user history data.
-
-Usage:
-1. Create an instance of APIMenu.
-2. Use the menu options to interact with the Spotify API and manage data.
 """
 from UI.menu import Menu
 from UI.menu_item import Item
@@ -28,6 +18,7 @@ from classes.lab7.data_manupulation.data_saver import DataSaver
 from classes.lab7.data_manupulation.data_visualization import DataVisualization
 from classes.lab7.data_manupulation.data_from_console import get_name, get_user_input_recommendations
 from classes.lab7.api_classes.recommendation import Recommendation
+import classes.lab7.tests.main as tests
 
 settings = get_lab_settings("lab7")
 HISTORY_FILE_PATH = settings["history_file_path"]
@@ -40,28 +31,6 @@ class APIMenu:
     - data: The data obtained from API calls.
     - history: An instance of the History class to manage user history.
     - data_visualization: An instance of the DataVisualization class to visualize data.
-
-    Methods:
-    - history_menu: Displays the history menu.
-    - search_menu: Displays the search menu.
-    - search_artist: Searches for an artist.
-    - search_track: Searches for a track.
-    - search_album: Searches for an album.
-    - player_menu: Displays the artist menu.
-    - get_recommendations: Gets track recommendations based on user input.
-    - get_artist_top_tracks: Gets an artist's top tracks.
-    - get_artist_albums: Gets an artist's albums.
-    - choose_menu: Displays the print or save menu.
-    - save_menu: Displays the save menu.
-    - save_json: Saves the data as JSON.
-    - save_csv: Saves the data as CSV.
-    - save_txt: Saves the data as TXT.
-    - print_menu: Displays the print menu.
-    - print_table: Prints the data as a table.
-    - print_list: Prints the data as a list.
-    - settings_menu: Displays the settings menu.
-    - print_settings: Prints the current settings.
-    - change_color: Changes the color settings.
     """
 
     def __init__(self):
@@ -85,6 +54,9 @@ class APIMenu:
         self.data_visualization = DataVisualization()
 
     def menu(self):
+        """
+        Displays the Spotify API menu and allows the user to navigate through different options.
+        """
         menu = Menu("\nSpotify API Menu")
         menu.set_color("green")
         menu.add_item(Item("1", "Search Menu", self.search_menu))

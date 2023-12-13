@@ -2,15 +2,6 @@
 Module: test_artist
 
 This module contains unit tests for the Artist class.
-
-Classes:
-    TestArtistClass:
-        This class contains unit tests for the Artist class.
-
-Methods:
-    - setUp(self): Set up the test environment before each test case.
-    - test_successful_request(self): Test the successful request to get artist JSON from API.
-    - test_no_artist_found(self): Test the case when no artist is found in the API.
 """
 import unittest
 from classes.lab7.api_classes.artist import Artist

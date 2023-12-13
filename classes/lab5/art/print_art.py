@@ -1,4 +1,6 @@
 """
+Print Art Module
+
 A module that defines the PrintArt class for printing 2D and 3D art.
 """
 from termcolor import colored
@@ -10,15 +12,6 @@ class PrintArt:
 
     Attributes:
     - _shape: The Shape object to be printed.
-
-    Methods:
-    - __init__(self, Shape): Initialize the PrintArt object.
-    - get_shape(self): Get the Shape object associated with the PrintArt object.
-    - set_shape(self, shape): Set the Shape object associated with the PrintArt object.
-    - print_art_2D(self): Print the 2D art of the Shape object.
-    - print_art_3D(self): Print the 3D art of the Shape object.
-    - __justify_art(self, art): Justify the art by adding padding based on the justification settings.
-    - __get_padding(self, art): Calculate the padding based on the console width and justification settings.
     """
 
     def __init__(self, Shape):

@@ -21,12 +21,6 @@ class DataSaver:
 
     Attributes:
     - data: The data to be saved.
-
-    Methods:
-    - save_to_json: Saves the data to a JSON file.
-    - save_to_csv: Saves the data to a CSV file.
-    - save_to_txt: Saves the data to a TXT file.
-    - flatten_json: Flattens a nested JSON object.
     """
 
     def __init__(self, data):

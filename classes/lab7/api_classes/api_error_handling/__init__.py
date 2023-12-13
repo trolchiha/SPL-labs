@@ -1,3 +1,0 @@
-"""
-API error handling module
-"""

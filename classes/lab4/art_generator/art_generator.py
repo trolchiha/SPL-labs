@@ -4,28 +4,6 @@ ArtGenerator Module
 This module defines the ArtGenerator class, which generates ASCII 
 art based on user input and settings. It includes methods for setting text, 
 changing settings, viewing and saving generated art, and viewing saved art from a file.
-
-Classes:
-    ArtGenerator: A class that generates ASCII art based on user input and settings.
-
-Usage:
-    Import this module and create an instance of the ArtGenerator class to generate 
-    ASCII art based on user input and settings. The class provides methods for interacting 
-    with and modifying text, settings, and the generated art.
-
-Example:
-    # Import the module
-    from your_module_name import ArtGenerator
-
-    # Create an instance of ArtGenerator
-    art_generator = ArtGenerator()
-
-    # Use methods to generate art and interact with settings
-    art_generator.set_text()
-    art_generator.change_settings()
-    art_generator.view_art()
-    art_generator.save_art_to_file()
-    art_generator.view_saved_art()
 """
 
 from termcolor import colored
@@ -48,21 +26,6 @@ class ArtGenerator:
     - __text: The text used to generate the art.
     - __settings: The settings for generating the art.
     - __art: The generated ASCII art.
-
-    Methods:
-    - set_text(): Sets the text used to generate the art.
-    - get_text(): Returns the text used to generate the art.
-    - set_settings(settings): Sets the settings for generating the art.
-    - get_settings(): Returns the settings for generating the art.
-    - get_art(): Returns the generated ASCII art.
-    - view_art(): Displays the generated ASCII art.
-    - set_art_settings(): Sets the settings for generating the art.
-    - __map_chars(): Maps the characters in the text to the corresponding ASCII art characters.
-    - __generate_art(chars): Generates the ASCII art based on the mapped characters.
-    - __get_padding(): Calculates the padding for aligning the art.
-    - change_settings(): Allows the user to change the settings for generating the art.
-    - save_art_to_file(): Saves the generated ASCII art to a file.
-    - view_saved_art(): Displays the saved ASCII art from a file.
     """
     def __init__(self):
         self.__text = None

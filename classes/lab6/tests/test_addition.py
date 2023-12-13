@@ -2,22 +2,6 @@
 Module: test_math_operations
 
 This module contains test cases for the count_sum function in the math_operations module.
-
-Classes:
-    AdditionTestCase:
-        Test case for the count_sum function in the math_operations module.
-
-Methods:
-    - test_addition_positive_numbers(self): Test addition of two positive numbers.
-    - test_addition_negative_numbers(self): Test addition of two negative numbers.
-    - test_addition_mixed_numbers(self): Test addition of a positive and a negative number.
-    - test_addition_int_and_zero(self): Test addition of an integer and zero.
-    - test_addition_positive_floats(self): Test addition of two positive floats.
-    - test_addition_negative_floats(self): Test addition of two negative floats.
-    - test_addition_mixed_floats(self): Test addition of a positive float and a negative float.
-    - test_addition_float_and_zero(self): Test addition of a float and zero.
-    - test_addition_int_and_float(self): Test addition of an integer and a float.
-    - test_addition_float_and_int(self): Test addition of a float and an integer.
 """
 import unittest
 

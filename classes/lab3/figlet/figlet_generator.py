@@ -2,25 +2,6 @@
 Module: figlet_generator
 
 This module contains the FigletGenerator class that generates figlet art based on provided text and settings.
-
-Classes:
-    FigletGenerator:
-        A class that generates figlet art based on the provided text and settings.
-
-Methods:
-    - __init__(self, text=None): Initialize the FigletGenerator object.
-    - get_text(self): Get the current text.
-    - get_settings(self): Get the current settings.
-    - get_figlet(self): Get the current figlet art.
-    - set_text(self, text): Set the text.
-    - set_settings(self, settings): Set the settings.
-    - set_figlet(self, figlet): Set the figlet art.
-    - generate_art(self): Generate the figlet art based on the current text and settings.
-    - modify_symbols(self, symbol): Modify the symbols in the figlet art.
-    - change_settings(self): Change the settings for generating the figlet art.
-    - view_art(self): View the generated figlet art.
-    - save_art(self): Save the generated figlet art to a file.
-    - view_saved_art(self): View the saved figlet art from a file.
 """
 from pyfiglet import Figlet
 from termcolor import colored

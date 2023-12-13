@@ -1,3 +1,9 @@
+"""
+Data Visualization Module
+
+A module that defines the DataVisualization class for visualizing data as a table or a list. 
+Contains the flatten_json_data function for flattening a nested JSON object.
+"""
 from tabulate import tabulate
 from colorama import Fore, Style
 from shared.settings import get_lab_settings

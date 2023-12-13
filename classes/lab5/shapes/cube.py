@@ -1,13 +1,10 @@
 """
 Cube Module
 
-This module defines the Cube class, representing a cube shape. The Cube class is a subclass of the Shape and PrintArt classes. It provides methods for generating 2D and 3D representations of a cube, initializing a 3D array, setting coordinates in the array, and more.
-
-Classes:
-    - Cube: Represents a cube shape, inherits from Shape and PrintArt.
-
-Usage:
-    Import this module to utilize the Cube class for creating and manipulating cube shapes in a graphical context.
+This module defines the Cube class, representing a cube shape. 
+The Cube class is a subclass of the Shape and PrintArt classes. 
+It provides methods for generating 2D and 3D representations of a cube, 
+initializing a 3D array, setting coordinates in the array, and more.
 """
 from shared.settings import get_lab_settings
 from classes.lab5.art.art_settings import ArtSettings
@@ -29,18 +26,6 @@ class Cube(Shape, PrintArt):
     - size: The size of the cube
     - justify: The justification of the cube
     - color: The color of the cube
-
-    Methods:
-    - __init__(self, size=DEFAULT_SIZE, justify=DEFAULT_JUSTIFY, color=DEFAULT_COLOR): 
-    Initializes a new instance of the Cube class.
-    - set_settings(self, settings): Sets the settings of the cube.
-    - generate_2D(self): Generates the 2D representation of the cube.
-    - generate_3D(self): Generates the 3D representation of the cube.
-    - __init_3d_array(self): Initializes a 3D array for the cube.
-    - __set_coordinates(self, array_3d): Sets the coordinates of the cube in the 3D array.
-    - __get_layers(self, array_3d): Gets the layers of the cube from the 3D array.
-    - __unite_str(self, str1, str2): Unites two strings by replacing spaces in the first 
-    string with non-space characters from the second string.
     """
 
     def __init__(self, size=DEFAULT_SIZE, justify=DEFAULT_JUSTIFY, color=DEFAULT_COLOR):

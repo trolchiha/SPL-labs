@@ -1,20 +1,7 @@
 """
-math_operations Module
+Math Operations Module
 
 This module provides functions for basic mathematical operations.
-
-The main functions include:
-- `count_sum`: Takes two parameters and returns their sum.
-- `count_difference`: Takes two parameters and returns their difference.
-- `count_product`: Takes two parameters and returns their product.
-- `count_quotient`: Takes two parameters and returns their quotient.
-- `count_power`: Takes two parameters and returns the first parameter raised to the power 
-of the second parameter.
-- `count_square_root`: Takes two parameters and returns the square root of each parameter.
-- `count_remainder`: Takes two parameters and returns the remainder of dividing the first 
-parameter by the second parameter.
-- `make_calculations`: Takes two parameters and an operator, and performs the corresponding 
-mathematical operation.
 
 These functions cover addition, subtraction, multiplication, division, exponentiation, square root, 
 and remainder operations.
