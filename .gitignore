@@ -2,14 +2,6 @@ __pycache__/
 
 .vscode/
 
-vars.py
-
 .env
 
-art*.txt
-
-*.png
-
 env
-
-docs/
