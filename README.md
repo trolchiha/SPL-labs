@@ -6,19 +6,23 @@ This repo works with `Python v3.11`.
 ```bash
 $ git clone <repo-url>
 ```
-2. Install virtualenv (if not already installed):
+2. Enter source dir:
+```bash
+$ cd src
+```
+3. Install virtualenv (if not already installed):
 ```bash
 $ pip install virtualenv
 ```
-3. Create virtual environment:
+4. Create virtual environment:
 ```bash
 $ virtualenv env
 ```
-4. Run this command:
+5. Run this command:
 ```bash
 $ source ./env/bin/activate
 ```
-5. Install the dependencies
+6. Install the dependencies
 ```bash
 $ (env) pip install -r requirements.txt
 ```
