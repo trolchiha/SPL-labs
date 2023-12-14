@@ -24,7 +24,7 @@ class CSVMenu:
         self.csv_file_path = CSV_FILE_PATH
         self.diagrams = Diagrams(self.csv_file_path)
 
-    def main_menu(self):
+    def menu(self):
         """
         Displays the main menu.
         """

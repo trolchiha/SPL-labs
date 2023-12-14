@@ -1,19 +1,9 @@
-14-12-2023 00:21:36 [INFO]: The program has started.
-14-12-2023 00:21:36 [INFO]: The menu Labs Menu has been called.
-14-12-2023 00:21:38 [INFO]: The menu Menu (Lab 1) has been called.
-14-12-2023 00:21:43 [INFO]: The function make_calculation has been called.
-14-12-2023 00:21:43 [INFO]: The menu Menu (Lab 1) has been called.
-14-12-2023 00:21:47 [INFO]: The function run has been called.
-14-12-2023 00:21:47 [INFO]: The menu Labs Menu has been called.
-14-12-2023 00:21:47 [INFO]: The menu Labs Menu has been called.
-14-12-2023 00:21:49 [INFO]: The menu Menu (Lab 8) has been called.
-14-12-2023 00:21:50 [INFO]: The menu Extreme values has been called.
-14-12-2023 00:21:52 [INFO]: The function print_min_values has been called.
-14-12-2023 00:21:52 [INFO]: The menu Extreme values has been called.
-14-12-2023 00:21:53 [INFO]: The function print_max_values has been called.
-14-12-2023 00:21:53 [INFO]: The menu Extreme values has been called.
-14-12-2023 00:21:56 [INFO]: The function values_menu has been called.
-14-12-2023 00:21:56 [INFO]: The menu Menu (Lab 8) has been called.
-14-12-2023 00:21:57 [INFO]: The function run has been called.
-14-12-2023 00:21:57 [INFO]: The menu Labs Menu has been called.
-14-12-2023 00:21:57 [INFO]: The program has ended.
+14-12-2023 11:02:58 [INFO]: The program has started.
+14-12-2023 11:02:58 [INFO]: The menu Labs Menu has been called.
+14-12-2023 11:02:59 [INFO]: The menu Menu (Lab 1) has been called.
+14-12-2023 11:03:00 [INFO]: The function run has been called.
+14-12-2023 11:03:00 [INFO]: The menu Labs Menu has been called.
+14-12-2023 11:03:01 [INFO]: The menu Menu has been called.
+14-12-2023 11:03:01 [INFO]: The function run has been called.
+14-12-2023 11:03:01 [INFO]: The menu Labs Menu has been called.
+14-12-2023 11:03:02 [INFO]: The program has ended.

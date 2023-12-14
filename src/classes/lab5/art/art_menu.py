@@ -24,7 +24,7 @@ class ArtMenu:
     def __init__(self):
         self.__shape = None
 
-    def main_menu(self):
+    def menu(self):
         """
         Displays the main menu for the art program.
         Allows the user to choose a shape or exit the program.

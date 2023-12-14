@@ -6,7 +6,7 @@ This repo works with `Python v3.11`.
 ```bash
 $ git clone <repo-url>
 ```
-2. Enter source dir:
+2. Enter the source dir:
 ```bash
 $ cd src
 ```

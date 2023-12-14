@@ -10,4 +10,4 @@ def run():
     Initializes and runs the CSV Menu for diagrams.
     """
     csv_menu = CSVMenu()
-    csv_menu.main_menu()
+    csv_menu.menu()

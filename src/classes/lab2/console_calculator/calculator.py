@@ -101,7 +101,7 @@ class Calculator:
         parameter1, parameter2 = get_parameters_from_console()
         operator = get_operator_from_console()
         result = make_calculations(parameter1, parameter2, operator)
-        formatted_result = self.format_result(parameter1, parameter2, operator, result)
+        formatted_result = self.__format_result(parameter1, parameter2, operator, result)
         self.print_calculation_result(formatted_result)
     
     def change_decimal_places(self):
@@ -117,7 +117,7 @@ class Calculator:
         decimal_places = int(input("Enter the number of decimal places: "))
         self.set_decimal_places(decimal_places)
         
-    def format_result(self, parameter1, parameter2, operator, calculation_result):
+    def __format_result(self, parameter1, parameter2, operator, calculation_result):
         """
         Formats the calculation result.
 
